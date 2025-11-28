@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portfolio — Sajed</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="hero-img" aria-label="Portrait"></div>
+      <div>
+        <h1 class="hero-title">Lorem ipsum dolor sit amet</h1>
+        <p class="hero-subtitle">Software Engineer · AI Specialist · Product-Focused Developer</p>
+        <p class="hero-copy">Minimal, clean and modern hero section. Professional and Apple‑like layout.</p>
+      </div>
+    </section>
+
+    <!-- VALUE PROPOSITION -->
+    <section class="services" id="services">
+      <h2>Services</h2>
+      <div class="list">
+        <span>UI/UX Design</span>
+        <span>Web Development</span>
+        <span>AI Integrations</span>
+        <span>Mobile Development</span>
+      </div>
+    </section>
+
+    <section class="benefits">
+      <h2>Why Choose Me</h2>
+      <div class="list">
+        <span>Clean, modern interfaces</span>
+        <span>Fast & scalable solutions</span>
+        <span>User-centered design</span>
+        <span>Strong communication</span>
+      </div>
+    </section>
+
+    <section class="process">
+      <h2>Work Process</h2>
+      <div class="list">
+        <span>Goals & Objectives</span>
+        <span>Research & Discovery</span>
+        <span>Wireframing</span>
+        <span>Prototyping</span>
+      </div>
+    </section>
+
+<!-- PROJECTS -->
+<section class="projects" id="projects">
+  <h2>Featured Projects / Case Studies</h2>
+  <div class="gallery">
+    <div class="project-card" data-project="1">
+      <div class="project-thumb">Preview 1</div>
+      <h3>Project One</h3>
+      <p>Short description of the project.</p>
+      <div class="tags">
+        <span class="tag">React</span>
+        <span class="tag">API</span>
+      </div>
+    </div>
+
+    <div class="project-card" data-project="2">
+      <div class="project-thumb">Preview 2</div>
+      <h3>Project Two</h3>
+      <p>Short description of the project.</p>
+      <div class="tags">
+        <span class="tag">AI</span>
+        <span class="tag">Python</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODAL OVERLAY -->
+<div id="project-modal" class="modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,.55); backdrop-filter:blur(14px); align-items:center; justify-content:center; z-index:2000;">
+  <div class="modal-content" style="background:var(--card); padding:30px; border-radius:20px; width:90%; max-width:700px; box-shadow:var(--shadow); position:relative;">
+    <button id="close-modal" style="position:absolute; top:14px; right:14px; border:none; background:transparent; font-size:1.4rem; cursor:pointer; color:var(--text);">×</button>
+
+    <h2 id="modal-title">Project Title</h2>
+    <p id="modal-desc" style="margin-top:10px;color:var(--muted);"></p>
+
+    <div id="modal-tags" style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;"></div>
+  </div>
+</div>
+
+
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials" id="testimonials">
+      <h2>What Clients Say</h2>
+      <div class="testimonial-cards">
+        <div class="testimonial-card">
+          <img src="assets/images/avatar1.jpg" alt="John Doe avatar">
+          <p>"Delivered fast and exceeded expectations."</p>
+          <span>John Doe, CEO</span>
+        </div>
+        <div class="testimonial-card">
+          <img src="assets/images/avatar2.jpg" alt="Jane Smith avatar">
+          <p>"Professional, efficient, and highly skilled."</p>
+          <span>Jane Smith, CTO</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ONLINE PRESENCE -->
+    <section class="presence">
+      <h2>Online Presence</h2>
+      <p>Connect with me on my platforms.</p>
+      <div class="presence-links">
+        <a href="#">LinkedIn</a>
+        <a href="#">X</a>
+        <a href="#">GitHub</a>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="lets-work" id="contact">
+      <h2>Let's Work Together</h2>
+      <p>Email me or schedule a meeting.</p>
+      <div class="cta-buttons">
+        <button class="btn">Email Me</button>
+        <button class="btn primary">Schedule Meeting</button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- MODAL -->
+  <div class="project-modal" id="projectModal" aria-hidden="true">
+    <div class="modal-content">
+      <span class="close" role="button" aria-label="Close">&times;</span>
+      <h3 id="modal-title"></h3>
+      <p id="modal-tags"></p>
+      <p id="modal-desc"></p>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

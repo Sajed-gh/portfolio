@@ -3,34 +3,49 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Portfolio of Sajed — Software Engineer & AI Specialist.">
   <title>Portfolio — Sajed</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-
+  <nav class="floating-nav">
+    <a href="#hero">Home</a>
+    <a href="#services">Services</a>
+    <a href="#projects">Work</a>
+    <a href="#contact">Contact</a>
+    
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+        <span class="icon">🌙</span>
+    </button>
+  </nav>
 
   <main>
 
-    <!-- HERO -->
     <section class="hero" id="hero">
-      <div class="hero-img" aria-label="Portrait"></div>
+      <div class="cv-download-container">
+          <a id="cv-download-link" href="assets/documents/your_cv_file.pdf" download class="download-btn" aria-label="Download My CV">
+              <span class="icon">↓</span>
+              <span class="text">Get My CV</span>
+          </a>
+      </div>
+      
+      <img src="assets/images/sajed_avatar.jpg" alt="Professional Portrait of Sajed" class="hero-avatar" loading="eager">
       <div>
-        <h1 class="hero-title">Lorem ipsum dolor sit amet</h1>
+        <h1 class="hero-title">Scaling Startups with Full-Stack Engineering and Applied AI.</h1>
         <p class="hero-subtitle">Software Engineer · AI Specialist · Product-Focused Developer</p>
-        <p class="hero-copy">Minimal, clean and modern hero section. Professional and Apple‑like layout.</p>
+        <p class="hero-copy">I build clean, high-performing web applications that drive user engagement and business results. I blend modern UX principles with scalable backend architecture.</p>
       </div>
     </section>
 
-    <!-- VALUE PROPOSITION -->
     <section class="services" id="services">
       <h2>Services</h2>
       <div class="list">
         <span>UI/UX Design</span>
-        <span>Web Development</span>
-        <span>AI Integrations</span>
-        <span>Mobile Development</span>
+        <span>Web Development (React/Node)</span>
+        <span>AI Integrations (LLMs, Python)</span>
+        <span>Mobile Development (React Native)</span>
       </div>
     </section>
 
@@ -40,110 +55,100 @@
         <span>Clean, modern interfaces</span>
         <span>Fast & scalable solutions</span>
         <span>User-centered design</span>
-        <span>Strong communication</span>
+        <span>Strong communication & project management</span>
       </div>
     </section>
 
     <section class="process">
       <h2>Work Process</h2>
       <div class="list">
-        <span>Goals & Objectives</span>
-        <span>Research & Discovery</span>
-        <span>Wireframing</span>
-        <span>Prototyping</span>
+        <span>Goals & Objectives (Discovery)</span>
+        <span>Research & Discovery (Tech Stack)</span>
+        <span>Wireframing & Prototyping</span>
+        <span>Development & Deployment</span>
       </div>
     </section>
 
-<!-- PROJECTS -->
-<section class="projects" id="projects">
-  <h2>Featured Projects / Case Studies</h2>
-  <div class="gallery">
-    <div class="project-card" data-project="1">
-      <div class="project-thumb">Preview 1</div>
-      <h3>Project One</h3>
-      <p>Short description of the project.</p>
-      <div class="tags">
-        <span class="tag">React</span>
-        <span class="tag">API</span>
+    <section class="projects" id="projects">
+      <h2>Featured Projects / Case Studies</h2>
+      <div class="gallery">
+        <div class="project-card" data-project="1" role="button" tabindex="0">
+          <div class="project-thumb">E-commerce Analytics Dashboard</div>
+          <h3>The Insight Platform</h3>
+          <p>A data visualization tool built for small e-commerce businesses.</p>
+          <div class="tags">
+            <span class="tag">React</span>
+            <span class="tag">API</span>
+          </div>
+        </div>
+
+        <div class="project-card" data-project="2" role="button" tabindex="0">
+          <div class="project-thumb">Automated Document Scanner</div>
+          <h3>LexiScan</h3>
+          <p>An internal tool to automate invoice processing using AI and Python.</p>
+          <div class="tags">
+            <span class="tag">AI</span>
+            <span class="tag">Python</span>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <div class="project-card" data-project="2">
-      <div class="project-thumb">Preview 2</div>
-      <h3>Project Two</h3>
-      <p>Short description of the project.</p>
-      <div class="tags">
-        <span class="tag">AI</span>
-        <span class="tag">Python</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- MODAL OVERLAY -->
-<div id="project-modal" class="modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,.55); backdrop-filter:blur(14px); align-items:center; justify-content:center; z-index:2000;">
-  <div class="modal-content" style="background:var(--card); padding:30px; border-radius:20px; width:90%; max-width:700px; box-shadow:var(--shadow); position:relative;">
-    <button id="close-modal" style="position:absolute; top:14px; right:14px; border:none; background:transparent; font-size:1.4rem; cursor:pointer; color:var(--text);">×</button>
-
-    <h2 id="modal-title">Project Title</h2>
-    <p id="modal-desc" style="margin-top:10px;color:var(--muted);"></p>
-
-    <div id="modal-tags" style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;"></div>
-  </div>
-</div>
-
-
-
-    <!-- TESTIMONIALS -->
     <section class="testimonials" id="testimonials">
       <h2>What Clients Say</h2>
       <div class="testimonial-cards">
         <div class="testimonial-card">
-          <img src="assets/images/avatar1.jpg" alt="John Doe avatar">
-          <p>"Delivered fast and exceeded expectations."</p>
-          <span>John Doe, CEO</span>
+          <img src="assets/images/avatar1.jpg" alt="John Doe avatar" loading="lazy">
+          <p>"Sajed’s integration of the custom API reduced our client onboarding time by 40%."</p>
+          <span>John Doe, CEO of TechCorp</span>
         </div>
         <div class="testimonial-card">
-          <img src="assets/images/avatar2.jpg" alt="Jane Smith avatar">
-          <p>"Professional, efficient, and highly skilled."</p>
-          <span>Jane Smith, CTO</span>
+          <img src="assets/images/avatar2.jpg" alt="Jane Smith avatar" loading="lazy">
+          <p>"Professional, efficient, and highly skilled. He handled the deployment seamlessly."</p>
+          <span>Jane Smith, CTO at Innovate Labs</span>
         </div>
       </div>
     </section>
 
-    <!-- ONLINE PRESENCE -->
     <section class="presence">
       <h2>Online Presence</h2>
       <p>Connect with me on my platforms.</p>
       <div class="presence-links">
-        <a href="#">LinkedIn</a>
-        <a href="#">X</a>
-        <a href="#">GitHub</a>
+        <a id="link-linkedin" href="#" target="_blank">LinkedIn</a>
+        <a id="link-x" href="#" target="_blank">X</a>
+        <a id="link-github" href="#" target="_blank">GitHub</a>
       </div>
     </section>
 
-    <!-- CONTACT -->
     <section class="lets-work" id="contact">
       <h2>Let's Work Together</h2>
-      <p>Email me or schedule a meeting.</p>
+      <p>I'm available for freelance projects and full-time roles. Reach out!</p>
       <div class="cta-buttons">
-        <button class="btn">Email Me</button>
-        <button class="btn primary">Schedule Meeting</button>
+        <a id="cta-email" href="#" class="btn">Email Me</a>
+        <a id="cta-schedule" href="#" target="_blank" class="btn primary">Schedule Meeting</a>
       </div>
     </section>
 
   </main>
 
-  <!-- MODAL -->
-  <div class="project-modal" id="projectModal" aria-hidden="true">
+  <div id="project-modal" class="modal">
     <div class="modal-content">
-      <span class="close" role="button" aria-label="Close">&times;</span>
-      <h3 id="modal-title"></h3>
-      <p id="modal-tags"></p>
+      <button id="close-modal" aria-label="Close Modal">×</button>
+      <h2 id="modal-title">Project Title</h2>
+
+      <div class="video-container">
+        <iframe id="project-video" title="Project Demo Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+
+      <h3 style="font-size: 1rem; font-weight: 500; margin-top: 15px;">Overview:</h3>
       <p id="modal-desc"></p>
+      <h3 style="font-size: 1rem; font-weight: 500; margin-top: 15px;">Technologies Used:</h3>
+      <div id="modal-tags"></div>
     </div>
   </div>
+  
+  <button id="scroll-to-top" class="btn scroll-top-btn" aria-label="Scroll to Top">↑</button>
 
-  <script src="js/main.js"></script>
+  <script src="js/main.js" defer></script> 
 </body>
 </html>

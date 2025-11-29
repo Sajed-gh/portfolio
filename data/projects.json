@@ -1,0 +1,14 @@
+{
+  "1": {
+    "title": "The Insight Platform: E-commerce Analytics",
+    "desc": "This platform was developed for a client to consolidate sales and traffic data from multiple sources (Shopify, Google Analytics) into a single, real-time dashboard. The goal was to provide small business owners with actionable insights without needing dedicated analysts. **Key Result:** Client reported a 25% increase in conversion rate within the first quarter due to data-driven product adjustments.",
+    "tags": ["React", "Redux", "Node.js", "MongoDB", "Chart.js"],
+    "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" 
+  },
+  "2": {
+    "title": "LexiScan: Automated Document Processor",
+    "desc": "An internal enterprise tool built to streamline invoice and purchase order processing. It uses custom AI models (via Python/TensorFlow) to identify key fields (vendor, date, amount) in scanned documents, reducing manual data entry. **Key Result:** Reduced the accounting team's document processing time by approximately 8 hours per week.",
+    "tags": ["AI", "Python", "TensorFlow", "FastAPI", "PostgreSQL"],
+    "videoUrl": "https://www.youtube.com/embed/BwXGz9r3e2M?autoplay=1"
+  }
+}

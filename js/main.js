@@ -1,18 +1,13 @@
-// GLOBAL CONTACT CONSTANTS (Maintenance Improvement)
-const contactInfo = {
-    email: 'your.email@example.com',
-    calendly: 'https://calendly.com/your-meeting-link',
-    linkedin: 'https://linkedin.com/in/sajed',
-    x: 'https://x.com/sajed',
-    github: 'https://github.com/sajed'
-};
+// Import the global configuration variables
+import { contactInfo } from '../data/config.js';
 
 // INITIALIZATION: Runs when DOM is fully loaded
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Initialize Theme
     initializeTheme();
     
-    // 2. Inject Contact Info
+    // 2. Inject Contact Info (and CV Link)
+    // contactInfo is now loaded from data/config.js
     injectContactInfo();
 
     // 3. Fetch Project Data and Initialize Modals
@@ -48,13 +43,32 @@ themeToggle.addEventListener('click', () => {
 
 /* CONTACT INFO INJECTION */
 const injectContactInfo = () => {
-    document.getElementById('cta-email').href = `mailto:${contactInfo.email}?subject=Portfolio Inquiry`;
-    document.getElementById('cta-schedule').href = contactInfo.calendly;
-    document.getElementById('link-linkedin').href = contactInfo.linkedin;
-    document.getElementById('link-x').href = contactInfo.x;
-    document.getElementById('link-github').href = contactInfo.github;
-};
+    // FIX: Using class selector to target all 'Email Me' buttons correctly.
+    document.querySelectorAll('.cta-email-link').forEach(el => {
+        el.href = `mailto:${contactInfo.email}?subject=Portfolio Inquiry`;
+    });
+    // FIX: Using class selector to target all 'Schedule Meeting' buttons correctly.
+    document.querySelectorAll('.cta-schedule-link').forEach(el => {
+        el.href = contactInfo.calendly;
+    });
 
+    // Presence Links
+    const linkLinkedin = document.getElementById('link-linkedin');
+    const linkX = document.getElementById('link-x');
+    const linkGithub = document.getElementById('link-github');
+    if (linkLinkedin) linkLinkedin.href = contactInfo.linkedin;
+    if (linkX) linkX.href = contactInfo.x;
+    if (linkGithub) linkGithub.href = contactInfo.github;
+
+    // Inject CV Link
+    const cvLink = document.getElementById('cv-download-link');
+    if (cvLink) {
+        // Ensure the correct URL is applied from the contactInfo object
+        cvLink.href = contactInfo.cvUrl; 
+        // Ensure the download attribute is present
+        cvLink.setAttribute('download', 'Mohamed_Sajed_CV.pdf');
+    }
+};
 
 /* PROJECT DATA FETCHING AND MODAL INITIALIZATION */
 const modal = document.getElementById("project-modal");
@@ -65,9 +79,9 @@ const closeModal = document.getElementById("close-modal");
 const projectVideo = document.getElementById("project-video");
 
 const stopVideoAndCloseModal = () => {
-    modal.style.display = "none";
+    if (modal) modal.style.display = "none";
     document.body.style.overflow = 'auto';
-    projectVideo.src = ''; // Stops the video
+    if (projectVideo) projectVideo.src = ''; // Stops the video
 };
 
 const setupModalListeners = (projectData) => {
@@ -89,24 +103,26 @@ const setupModalListeners = (projectData) => {
                     modalTags.appendChild(span);
                 });
 
-                projectVideo.src = data.videoUrl;
+                if (projectVideo) projectVideo.src = data.videoUrl;
 
-                modal.style.display = "flex";
+                if (modal) modal.style.display = "flex";
                 document.body.style.overflow = 'hidden';
             }
         });
     });
 
-    closeModal.addEventListener("click", stopVideoAndCloseModal);
-    modal.addEventListener("click", e => { if (e.target === modal) stopVideoAndCloseModal(); });
+    if (closeModal) closeModal.addEventListener("click", stopVideoAndCloseModal);
+    if (modal) modal.addEventListener("click", e => { if (e.target === modal) stopVideoAndCloseModal(); });
+    
     document.addEventListener("keydown", e => {
-        if (e.key === "Escape" && modal.style.display === "flex") {
+        if (e.key === "Escape" && modal && modal.style.display === "flex") {
             stopVideoAndCloseModal();
         }
     });
 };
 
 const fetchProjectDataAndInitialize = () => {
+    // Note: Assuming 'data/projects.json' is available relative to index.html
     fetch('data/projects.json')
         .then(response => {
             if (!response.ok) {
@@ -119,7 +135,6 @@ const fetchProjectDataAndInitialize = () => {
         })
         .catch(error => {
             console.error("Could not fetch project data. Ensure data/projects.json exists.", error);
-            // Optionally, show a fallback message to the user
         });
 };
 
@@ -140,15 +155,17 @@ const scrollTopBtn = document.getElementById('scroll-to-top');
 
 window.addEventListener('scroll', () => {
   if (window.scrollY > 400) { 
-    scrollTopBtn.classList.add('visible');
+    if (scrollTopBtn) scrollTopBtn.classList.add('visible');
   } else {
-    scrollTopBtn.classList.remove('visible');
+    if (scrollTopBtn) scrollTopBtn.classList.remove('visible');
   }
 });
 
-scrollTopBtn.addEventListener('click', () => {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-  });
-});
+if (scrollTopBtn) {
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+}

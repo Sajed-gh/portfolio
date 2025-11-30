@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Portfolio of Sajed — Software Engineer & AI Specialist.">
+  <meta name="description" content="Portfolio of Sajed ">
   <title>Portfolio — Sajed</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
@@ -25,23 +25,41 @@
 
     <section class="hero" id="hero">
       <div class="cv-download-container">
-          <a id="cv-download-link" href="assets/documents/your_cv_file.pdf" download class="download-btn" aria-label="Download My CV">
+          <a id="cv-download-link" href="#" download class="download-btn" aria-label="Download My CV">
               <span class="icon">↓</span>
               <span class="text">Get My CV</span>
           </a>
       </div>
       
-      <img src="assets/images/sajed_avatar.jpg" alt="Professional Portrait of Sajed" class="hero-avatar" loading="eager">
+      <img src="assets/images/IMG-20240517-WA0016.jpg" alt="Professional Portrait of Sajed" class="hero-avatar" loading="eager">
       <div>
-        <h1 class="hero-title">Scaling Startups with Full-Stack Engineering and Applied AI.</h1>
+        <h1 class="hero-title">Mohamed Sajed Gharsalli</h1>
         <p class="hero-subtitle">Software Engineer · AI Specialist · Product-Focused Developer</p>
         <p class="hero-copy">I build clean, high-performing web applications that drive user engagement and business results. I blend modern UX principles with scalable backend architecture.</p>
+
+        <div class="hero-stats">
+            <div class="stat-item">
+                <span class="stat-number">5+</span>
+                <span class="stat-label">Years Experience</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">15+</span>
+                <span class="stat-label">Projects Completed</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">40%</span>
+                <span class="stat-label">Avg. Performance Boost</span>
+            </div>
+        </div>
+
+        <div class="cta-buttons hero-cta">
+            <a href="#" target="_blank" class="btn primary cta-schedule-link">Schedule Meeting</a>
+          </div>
       </div>
     </section>
-
     <section class="services" id="services">
       <h2>Services</h2>
-      <div class="list">
+      <div class="list block-list">
         <span>UI/UX Design</span>
         <span>Web Development (React/Node)</span>
         <span>AI Integrations (LLMs, Python)</span>
@@ -49,9 +67,9 @@
       </div>
     </section>
 
-    <section class="benefits">
-      <h2>Why Choose Me</h2>
-      <div class="list">
+    <section class="value-prop">
+      <h2>Values</h2>
+      <div class="list block-list">
         <span>Clean, modern interfaces</span>
         <span>Fast & scalable solutions</span>
         <span>User-centered design</span>
@@ -61,7 +79,7 @@
 
     <section class="process">
       <h2>Work Process</h2>
-      <div class="list">
+      <div class="list block-list">
         <span>Goals & Objectives (Discovery)</span>
         <span>Research & Discovery (Tech Stack)</span>
         <span>Wireframing & Prototyping</span>
@@ -94,19 +112,31 @@
       </div>
     </section>
 
-    <section class="testimonials" id="testimonials">
-      <h2>What Clients Say</h2>
-      <div class="testimonial-cards">
-        <div class="testimonial-card">
-          <img src="assets/images/avatar1.jpg" alt="John Doe avatar" loading="lazy">
-          <p>"Sajed’s integration of the custom API reduced our client onboarding time by 40%."</p>
-          <span>John Doe, CEO of TechCorp</span>
-        </div>
-        <div class="testimonial-card">
-          <img src="assets/images/avatar2.jpg" alt="Jane Smith avatar" loading="lazy">
-          <p>"Professional, efficient, and highly skilled. He handled the deployment seamlessly."</p>
-          <span>Jane Smith, CTO at Innovate Labs</span>
-        </div>
+    <section class="blogs" id="blogs">
+      <h2>Latest Insights & Guides</h2>
+      <div class="blog-gallery">
+        
+        <a href="link-to-blog-1" target="_blank" class="blog-card">
+          <div class="blog-thumb">Web Dev</div>
+          <h3>The Future of React State Management</h3>
+          <p>Analyzing the shift from Redux to Zustand and Jotai for modern applications.</p>
+          <span class="blog-date">Oct 10, 2024</span>
+        </a>
+
+        <a href="link-to-blog-2" target="_blank" class="blog-card">
+          <div class="blog-thumb">AI / Python</div>
+          <h3>How to Integrate LLMs for Enterprise Automation</h3>
+          <p>A practical guide on building robust, scalable AI integrations using FastAPI.</p>
+          <span class="blog-date">Sep 28, 2024</span>
+        </a>
+        
+        <a href="link-to-blog-3" target="_blank" class="blog-card">
+          <div class="blog-thumb">Optimization</div>
+          <h3>Case Study: 40% Performance Boost on Legacy API</h3>
+          <p>A detailed walkthrough of refactoring endpoints and optimizing database queries.</p>
+          <span class="blog-date">Aug 15, 2024</span>
+        </a>
+        
       </div>
     </section>
 
@@ -114,9 +144,18 @@
       <h2>Online Presence</h2>
       <p>Connect with me on my platforms.</p>
       <div class="presence-links">
-        <a id="link-linkedin" href="#" target="_blank">LinkedIn</a>
-        <a id="link-x" href="#" target="_blank">X</a>
-        <a id="link-github" href="#" target="_blank">GitHub</a>
+        <a id="link-linkedin" href="#" target="_blank">
+            <svg class="icon-linkedin" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM4 9h4v12H4zM6 3.5A2.5 2.5 0 113.5 6 2.5 2.5 0 016 3.5z"/></svg>
+            LinkedIn
+        </a>
+        <a id="link-x" href="#" target="_blank">
+            <svg class="icon-x" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.261 8.528 11.239h-6.737l-5.694-7.525-6.577 7.525H2.4l7.636-8.73L.905 2.25h8.083l4.718 6.237L18.244 2.25zM15.42 20.91H17.5L7.14 3.085H5l10.42 17.825z"/></svg>
+            X (Twitter)
+        </a>
+        <a id="link-github" href="#" target="_blank">
+            <svg class="icon-github" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.419 2.864 8.165 6.837 9.48.5.092.687-.217.687-.483v-1.747c-2.775.6-3.363-1.34-3.363-1.34-.454-1.155-1.11-1.462-1.11-1.462-.907-.62.068-.608.068-.608 1.007.07 1.532 1.03 1.532 1.03.89 1.528 2.333 1.088 2.9.832.09-.64.35-1.088.636-1.34-2.22-.25-4.555-1.11-4.555-4.945 0-1.088.39-1.983 1.03-2.682-.103-.254-.447-1.272.097-2.65 0 0 .84-.27 2.75 1.027.798-.222 1.643-.333 2.5-.333.857 0 1.702.11 2.5.333 1.91-1.297 2.75-1.027 2.75-1.027.544 1.378.2 2.396.097 2.65.64.699 1.03 1.594 1.03 2.682 0 3.848-2.334 4.693-4.565 4.945.356.307.675.917.675 1.85V22c0 .266.187.575.687.484C19.136 20.165 22 16.419 22 12 22 6.477 17.523 2 12 2z"/></svg>
+            GitHub
+        </a>
       </div>
     </section>
 
@@ -124,8 +163,8 @@
       <h2>Let's Work Together</h2>
       <p>I'm available for freelance projects and full-time roles. Reach out!</p>
       <div class="cta-buttons">
-        <a id="cta-email" href="#" class="btn">Email Me</a>
-        <a id="cta-schedule" href="#" target="_blank" class="btn primary">Schedule Meeting</a>
+        <a href="#" class="btn cta-email-link">Email Me</a>
+        <a href="#" target="_blank" class="btn primary cta-schedule-link">Schedule Meeting</a>
       </div>
     </section>
 
@@ -149,6 +188,6 @@
   
   <button id="scroll-to-top" class="btn scroll-top-btn" aria-label="Scroll to Top">↑</button>
 
-  <script src="js/main.js" defer></script> 
+  <script src="js/main.js" type="module" defer></script> 
 </body>
 </html>

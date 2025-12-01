@@ -1,0 +1,635 @@
+[00:00:00.671] Server  LOG      ✓ Ready in 374ms
+[00:00:02.384] Server  WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[00:00:03.172] Browser WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[00:00:06.525] Server  WARN     ⚠ Cross origin request detected from 192.168.100.6 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+[00:00:06.996] Browser WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[00:00:28.693] Server  LOG      ✓ Compiled in 6ms
+[00:00:30.513] Server  LOG      ✓ Compiled in 4ms
+[00:00:33.653] Browser WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[00:00:42.416] Server  LOG      ✓ Compiled in 4ms
+[00:06:06.559] Server  LOG      ✓ Compiled in 4ms
+[00:06:13.869] Browser WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[00:06:16.929] Browser WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[00:06:31.821] Browser WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[00:08:05.445] Server  LOG      ✓ Compiled in 5ms
+[00:08:11.932] Browser WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[00:09:04.502] Server  LOG      ✓ Compiled in 4ms
+[00:10:46.468] Server  LOG      ✓ Compiled in 4ms
+[00:10:48.398] Server  LOG      ✓ Compiled in 4ms
+[00:10:53.552] Browser WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[00:11:33.599] Server  LOG      ✓ Compiled in 4ms
+[00:11:39.677] Browser WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[00:24:10.445] Browser WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[00:24:23.244] Browser WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[00:24:33.746] Browser WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[00:24:47.901] Browser WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[00:25:00.678] Browser WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[00:27:45.980] Browser WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[00:30:33.434] Server  LOG      ✓ Compiled in 4ms
+[00:30:37.578] Server  LOG      ✓ Compiled in 3ms
+[00:30:44.841] Browser WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[00:30:54.381] Server  LOG      ✓ Compiled in 3ms
+[00:30:54.531] Server  LOG      ✓ Compiled in 3ms
+[00:30:55.202] Server  LOG      ✓ Compiled in 4ms
+[00:30:55.553] Server  LOG      ✓ Compiled in 4ms
+[00:30:55.882] Server  LOG      ✓ Compiled in 5ms
+[00:30:58.916] Browser WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[00:31:08.832] Server  LOG      ✓ Compiled in 4ms
+[00:31:09.571] Server  LOG      ✓ Compiled in 4ms
+[00:31:12.463] Browser WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[00:31:20.239] Server  LOG      ✓ Compiled in 4ms
+[00:31:25.393] Server  LOG      ✓ Compiled in 3ms
+[00:31:39.679] Server  LOG      ✓ Compiled in 4ms
+[00:31:46.614] Server  LOG      ✓ Compiled in 6ms
+[00:31:48.526] Server  LOG      ✓ Compiled in 4ms
+[00:31:48.857] Server  LOG      ✓ Compiled in 4ms
+[00:31:55.254] Browser WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[00:32:04.147] Server  LOG      ✓ Compiled in 4ms
+[00:32:04.655] Server  LOG      ✓ Compiled in 3ms
+[00:32:04.943] Server  LOG      ✓ Compiled in 4ms
+[00:32:09.991] Browser WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[00:32:14.250] Server  LOG      ✓ Compiled in 4ms
+[00:32:14.853] Server  LOG      ✓ Compiled in 5ms
+[00:32:20.517] Browser WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[00:32:39.185] Server  LOG      ✓ Compiled in 4ms
+[00:32:39.743] Server  LOG      ✓ Compiled in 4ms
+[00:32:41.892] Server  LOG      ✓ Compiled in 4ms
+[00:32:42.397] Server  LOG      ✓ Compiled in 4ms
+[00:32:44.690] Server  LOG      ✓ Compiled in 23ms
+[00:32:45.545] Server  LOG      ✓ Compiled in 4ms
+[00:32:48.691] Server  LOG      ✓ Compiled in 4ms
+[00:32:49.076] Server  LOG      ✓ Compiled in 3ms
+[00:32:53.815] Browser WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[00:36:08.713] Server  LOG      ✓ Compiled in 4ms
+[00:36:18.004] Server  LOG      ✓ Compiled in 4ms
+[00:36:23.948] Browser WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[00:36:29.158] Server  LOG      ✓ Compiled in 4ms
+[00:36:46.633] Server  LOG      ✓ Compiled in 8ms
+[00:36:46.836] Browser ERROR   ./styles/globals.css:537:43
+Parsing CSS source code failed
+  535 | @media(max-width:680px){
+  536 |   .hero{flex-direction:column;text-align:center}
+> 537 |   .hero-avatar{width:160px;height:160px; t} 
+      |                                           ^
+  538 |   .floating-nav { 
+  539 |       bottom: 20px; 
+  540 |       top: auto; 
+
+Unexpected end of input
+
+Import trace:
+  Browser:
+    ./styles/globals.css
+    ./pages/_app.js
+[00:36:47.569] Server  LOG      ✓ Compiled in 5ms
+[00:36:47.705] Browser ERROR   ./styles/globals.css:537:43
+Parsing CSS source code failed
+  535 | @media(max-width:680px){
+  536 |   .hero{flex-direction:column;text-align:center}
+> 537 |   .hero-avatar{width:160px;height:160px; t} 
+      |                                           ^
+  538 |   .floating-nav { 
+  539 |       bottom: 20px; 
+  540 |       top: auto; 
+
+Unexpected end of input
+
+Import trace:
+  Browser:
+    ./styles/globals.css
+    ./pages/_app.js
+[00:36:49.424] Server  LOG      ✓ Compiled in 4ms
+[00:36:50.195] Server  LOG      ✓ Compiled in 4ms
+[00:36:50.514] Server  LOG      ✓ Compiled in 4ms
+[00:36:50.998] Server  LOG      ✓ Compiled in 4ms
+[00:36:55.357] Server  LOG      ✓ Compiled in 3ms
+[00:36:55.678] Server  LOG      ✓ Compiled in 8ms
+[00:36:55.771] Server  LOG      ✓ Compiled in 10ms
+[00:36:55.900] Browser ERROR   ./styles/globals.css:537:44
+Parsing CSS source code failed
+  535 | @media(max-width:680px){
+  536 |   .hero{flex-direction:column;text-align:center}
+> 537 |   .hero-avatar{width:160px;height:160px; to;} 
+      |                                            ^
+  538 |   .floating-nav { 
+  539 |       bottom: 20px; 
+  540 |       top: auto; 
+
+Unexpected end of input
+
+Import trace:
+  Browser:
+    ./styles/globals.css
+    ./pages/_app.js
+[00:36:56.016] Browser ERROR   ./styles/globals.css:537:43
+Parsing CSS source code failed
+  535 | @media(max-width:680px){
+  536 |   .hero{flex-direction:column;text-align:center}
+> 537 |   .hero-avatar{width:160px;height:160px; t;} 
+      |                                           ^
+  538 |   .floating-nav { 
+  539 |       bottom: 20px; 
+  540 |       top: auto; 
+
+Unexpected end of input
+
+Import trace:
+  Browser:
+    ./styles/globals.css
+    ./pages/_app.js
+[00:36:56.054] Server  LOG      ✓ Compiled in 4ms
+[00:36:56.697] Server  LOG      ✓ Compiled in 4ms
+[00:36:56.940] Browser ERROR   ./styles/globals.css:537:43
+Parsing CSS source code failed
+  535 | @media(max-width:680px){
+  536 |   .hero{flex-direction:column;text-align:center}
+> 537 |   .hero-avatar{width:160px;height:160px; p;} 
+      |                                           ^
+  538 |   .floating-nav { 
+  539 |       bottom: 20px; 
+  540 |       top: auto; 
+
+Unexpected end of input
+
+Import trace:
+  Browser:
+    ./styles/globals.css
+    ./pages/_app.js
+[00:36:56.940] Browser ERROR   ./styles/globals.css:537:44
+Parsing CSS source code failed
+  535 | @media(max-width:680px){
+  536 |   .hero{flex-direction:column;text-align:center}
+> 537 |   .hero-avatar{width:160px;height:160px; pa;} 
+      |                                            ^
+  538 |   .floating-nav { 
+  539 |       bottom: 20px; 
+  540 |       top: auto; 
+
+Unexpected end of input
+
+Import trace:
+  Browser:
+    ./styles/globals.css
+    ./pages/_app.js
+[00:36:57.178] Browser ERROR   ./styles/globals.css:537:45
+Parsing CSS source code failed
+  535 | @media(max-width:680px){
+  536 |   .hero{flex-direction:column;text-align:center}
+> 537 |   .hero-avatar{width:160px;height:160px; pad;} 
+      |                                             ^
+  538 |   .floating-nav { 
+  539 |       bottom: 20px; 
+  540 |       top: auto; 
+
+Unexpected end of input
+
+Import trace:
+  Browser:
+    ./styles/globals.css
+    ./pages/_app.js
+[00:36:57.344] Browser ERROR   ./styles/globals.css:537:46
+Parsing CSS source code failed
+  535 | @media(max-width:680px){
+  536 |   .hero{flex-direction:column;text-align:center}
+> 537 |   .hero-avatar{width:160px;height:160px; padd;} 
+      |                                              ^
+  538 |   .floating-nav { 
+  539 |       bottom: 20px; 
+  540 |       top: auto; 
+
+Unexpected end of input
+
+Import trace:
+  Browser:
+    ./styles/globals.css
+    ./pages/_app.js
+[00:36:58.024] Browser ERROR   ./styles/globals.css:537:44
+Parsing CSS source code failed
+  535 | @media(max-width:680px){
+  536 |   .hero{flex-direction:column;text-align:center}
+> 537 |   .hero-avatar{width:160px;height:160px; to;} 
+      |                                            ^
+  538 |   .floating-nav { 
+  539 |       bottom: 20px; 
+  540 |       top: auto; 
+
+Unexpected end of input
+
+Import trace:
+  Browser:
+    ./styles/globals.css
+    ./pages/_app.js
+[00:36:58.024] Browser ERROR   ./styles/globals.css:537:43
+Parsing CSS source code failed
+  535 | @media(max-width:680px){
+  536 |   .hero{flex-direction:column;text-align:center}
+> 537 |   .hero-avatar{width:160px;height:160px; t;} 
+      |                                           ^
+  538 |   .floating-nav { 
+  539 |       bottom: 20px; 
+  540 |       top: auto; 
+
+Unexpected end of input
+
+Import trace:
+  Browser:
+    ./styles/globals.css
+    ./pages/_app.js
+[00:36:58.024] Browser ERROR   ./styles/globals.css:537:43
+Parsing CSS source code failed
+  535 | @media(max-width:680px){
+  536 |   .hero{flex-direction:column;text-align:center}
+> 537 |   .hero-avatar{width:160px;height:160px; p;} 
+      |                                           ^
+  538 |   .floating-nav { 
+  539 |       bottom: 20px; 
+  540 |       top: auto; 
+
+Unexpected end of input
+
+Import trace:
+  Browser:
+    ./styles/globals.css
+    ./pages/_app.js
+[00:36:58.024] Browser ERROR   ./styles/globals.css:537:44
+Parsing CSS source code failed
+  535 | @media(max-width:680px){
+  536 |   .hero{flex-direction:column;text-align:center}
+> 537 |   .hero-avatar{width:160px;height:160px; pa;} 
+      |                                            ^
+  538 |   .floating-nav { 
+  539 |       bottom: 20px; 
+  540 |       top: auto; 
+
+Unexpected end of input
+
+Import trace:
+  Browser:
+    ./styles/globals.css
+    ./pages/_app.js
+[00:36:58.024] Browser ERROR   ./styles/globals.css:537:45
+Parsing CSS source code failed
+  535 | @media(max-width:680px){
+  536 |   .hero{flex-direction:column;text-align:center}
+> 537 |   .hero-avatar{width:160px;height:160px; pad;} 
+      |                                             ^
+  538 |   .floating-nav { 
+  539 |       bottom: 20px; 
+  540 |       top: auto; 
+
+Unexpected end of input
+
+Import trace:
+  Browser:
+    ./styles/globals.css
+    ./pages/_app.js
+[00:36:58.024] Browser ERROR   ./styles/globals.css:537:46
+Parsing CSS source code failed
+  535 | @media(max-width:680px){
+  536 |   .hero{flex-direction:column;text-align:center}
+> 537 |   .hero-avatar{width:160px;height:160px; padd;} 
+      |                                              ^
+  538 |   .floating-nav { 
+  539 |       bottom: 20px; 
+  540 |       top: auto; 
+
+Unexpected end of input
+
+Import trace:
+  Browser:
+    ./styles/globals.css
+    ./pages/_app.js
+[00:36:58.610] Server  LOG      ✓ Compiled in 4ms
+[00:37:01.027] Server  LOG      ✓ Compiled in 3ms
+[00:37:01.262] Server  LOG      ✓ Compiled in 4ms
+[00:37:02.680] Server  LOG      ✓ Compiled in 4ms
+[00:37:02.939] Server  LOG      ✓ Compiled in 4ms
+[00:37:07.041] Server  LOG      ✓ Compiled in 3ms
+[00:37:10.694] Server  LOG      ✓ Compiled in 3ms
+[00:37:10.882] Browser ERROR   ./styles/globals.css:537:44
+Parsing CSS source code failed
+  535 | @media(max-width:680px){
+  536 |   .hero{flex-direction:column;text-align:center}
+> 537 |   .hero-avatar{width:160px;height:160px; to;} 
+      |                                            ^
+  538 |   .floating-nav { 
+  539 |       bottom: 20px; 
+  540 |       top: auto; 
+
+Unexpected end of input
+
+Import trace:
+  Browser:
+    ./styles/globals.css
+    ./pages/_app.js
+[00:37:11.597] Browser ERROR   ./styles/globals.css:537:44
+Parsing CSS source code failed
+  535 | @media(max-width:680px){
+  536 |   .hero{flex-direction:column;text-align:center}
+> 537 |   .hero-avatar{width:160px;height:160px; to} 
+      |                                            ^
+  538 |   .floating-nav { 
+  539 |       bottom: 20px; 
+  540 |       top: auto; 
+
+Unexpected end of input
+
+Import trace:
+  Browser:
+    ./styles/globals.css
+    ./pages/_app.js
+[00:37:11.809] Browser ERROR   ./styles/globals.css:537:43
+Parsing CSS source code failed
+  535 | @media(max-width:680px){
+  536 |   .hero{flex-direction:column;text-align:center}
+> 537 |   .hero-avatar{width:160px;height:160px; t} 
+      |                                           ^
+  538 |   .floating-nav { 
+  539 |       bottom: 20px; 
+  540 |       top: auto; 
+
+Unexpected end of input
+
+Import trace:
+  Browser:
+    ./styles/globals.css
+    ./pages/_app.js
+[00:37:11.866] Server  LOG      ✓ Compiled in 5ms
+[00:37:12.831] Browser ERROR   ./styles/globals.css:537:44
+Parsing CSS source code failed
+  535 | @media(max-width:680px){
+  536 |   .hero{flex-direction:column;text-align:center}
+> 537 |   .hero-avatar{width:160px;height:160px; to;} 
+      |                                            ^
+  538 |   .floating-nav { 
+  539 |       bottom: 20px; 
+  540 |       top: auto; 
+
+Unexpected end of input
+
+Import trace:
+  Browser:
+    ./styles/globals.css
+    ./pages/_app.js
+[00:37:12.831] Browser ERROR   ./styles/globals.css:537:44
+Parsing CSS source code failed
+  535 | @media(max-width:680px){
+  536 |   .hero{flex-direction:column;text-align:center}
+> 537 |   .hero-avatar{width:160px;height:160px; to} 
+      |                                            ^
+  538 |   .floating-nav { 
+  539 |       bottom: 20px; 
+  540 |       top: auto; 
+
+Unexpected end of input
+
+Import trace:
+  Browser:
+    ./styles/globals.css
+    ./pages/_app.js
+[00:37:12.831] Browser ERROR   ./styles/globals.css:537:43
+Parsing CSS source code failed
+  535 | @media(max-width:680px){
+  536 |   .hero{flex-direction:column;text-align:center}
+> 537 |   .hero-avatar{width:160px;height:160px; t} 
+      |                                           ^
+  538 |   .floating-nav { 
+  539 |       bottom: 20px; 
+  540 |       top: auto; 
+
+Unexpected end of input
+
+Import trace:
+  Browser:
+    ./styles/globals.css
+    ./pages/_app.js
+[00:37:32.147] Server  LOG      ✓ Compiled in 9ms
+[00:37:40.261] Server  LOG      ✓ Compiled in 6ms
+[00:37:41.007] Server  LOG      ✓ Compiled in 139ms
+[00:37:41.095] Server  LOG      ✓ Compiled in 5ms
+[00:37:41.285] Server  LOG      ✓ Compiled in 6ms
+[00:37:41.402] Server  LOG      ✓ Compiled in 6ms
+[00:37:41.518] Server  LOG      ✓ Compiled in 5ms
+[00:37:41.663] Server  LOG      ✓ Compiled in 5ms
+[00:37:41.793] Server  LOG      ✓ Compiled in 5ms
+[00:37:41.902] Server  LOG      ✓ Compiled in 6ms
+[00:37:42.144] Server  WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[00:37:42.173] Server  LOG      ✓ Compiled in 7ms
+[00:37:42.336] Server  LOG      ✓ Compiled in 5ms
+[00:37:42.599] Server  LOG      ✓ Compiled in 7ms
+[00:37:42.756] Server  LOG      ✓ Compiled in 6ms
+[00:37:43.829] Server  LOG      ✓ Compiled in 6ms
+[00:37:44.656] Server  LOG      ✓ Compiled in 14ms
+[00:37:44.794] Server  LOG      ✓ Compiled in 6ms
+[00:37:45.635] Server  LOG      ✓ Compiled in 6ms
+[00:37:46.139] Server  LOG      ✓ Compiled in 6ms
+[00:37:46.557] Server  LOG      ✓ Compiled in 5ms
+[00:37:54.612] Server  LOG      ✓ Compiled in 6ms
+[00:37:55.051] Server  LOG      ✓ Compiled in 46ms
+[00:37:55.290] Server  WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[00:37:55.298] Server  ERROR   An empty string ("") was passed to the src attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to src instead of an empty string.
+[00:37:55.317] Server  LOG      ✓ Compiled in 7ms
+[00:37:55.318] Browser ERROR   An empty string ("") was passed to the %s attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to %s instead of an empty string. src src
+[00:37:55.752] Server  LOG      ✓ Compiled in 5ms
+[00:37:55.879] Browser ERROR   An empty string ("") was passed to the %s attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to %s instead of an empty string. src src
+[00:37:56.933] Server  LOG      ✓ Compiled in 17ms
+[00:37:57.082] Browser ERROR   An empty string ("") was passed to the %s attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to %s instead of an empty string. src src
+[00:37:57.718] Server  WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[00:37:57.744] Server  LOG      ✓ Compiled in 22ms
+[00:37:57.881] Server  LOG      ✓ Compiled in 5ms
+[00:37:57.910] Browser ERROR   An empty string ("") was passed to the %s attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to %s instead of an empty string. src src
+[00:37:58.377] Server  LOG      ✓ Compiled in 6ms
+[00:37:58.895] Server  LOG      ✓ Compiled in 5ms
+[00:37:59.184] Server  LOG      ✓ Compiled in 6ms
+[00:37:59.993] Server  LOG      ✓ Compiled in 6ms
+[00:38:00.190] Server  LOG      ✓ Compiled in 6ms
+[00:38:00.549] Server  LOG      ✓ Compiled in 6ms
+[00:38:00.749] Browser ERROR   An empty string ("") was passed to the %s attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to %s instead of an empty string. src src
+[00:38:01.254] Server  LOG      ✓ Compiled in 7ms
+[00:38:01.526] Browser ERROR   An empty string ("") was passed to the %s attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to %s instead of an empty string. src src
+[00:38:03.066] Server  LOG      ✓ Compiled in 12ms
+[00:38:03.888] Server  LOG      ✓ Compiled in 6ms
+[00:38:05.049] Server  LOG      ✓ Compiled in 6ms
+[00:38:05.500] Server  LOG      ✓ Compiled in 5ms
+[00:38:06.323] Server  LOG      ✓ Compiled in 7ms
+[00:38:06.809] Server  LOG      ✓ Compiled in 6ms
+[00:38:07.326] Server  LOG      ✓ Compiled in 6ms
+[00:38:08.991] Server  LOG      ✓ Compiled in 6ms
+[00:38:17.274] Server  WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[00:38:17.903] Browser WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[00:38:27.218] Browser WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[00:38:35.339] Server  LOG      ✓ Compiled in 6ms
+[00:38:35.547] Server  LOG      ✓ Compiled in 6ms
+[00:38:35.689] Server  LOG      ✓ Compiled in 5ms
+[00:38:35.850] Server  LOG      ✓ Compiled in 6ms
+[00:38:36.008] Server  LOG      ✓ Compiled in 7ms
+[00:38:36.146] Server  LOG      ✓ Compiled in 5ms
+[00:38:36.307] Server  LOG      ✓ Compiled in 6ms
+[00:38:36.449] Server  LOG      ✓ Compiled in 5ms
+[00:38:37.151] Server  LOG      ✓ Compiled in 6ms
+[00:38:51.751] Server  LOG      ✓ Compiled in 7ms
+[00:39:03.376] Server  WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[00:39:04.114] Browser WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[00:41:54.804] Browser WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[00:42:09.720] Server  LOG      ✓ Compiled in 6ms
+[00:42:09.886] Server  LOG      ✓ Compiled in 5ms
+[00:42:10.021] Server  LOG      ✓ Compiled in 5ms
+[00:42:10.170] Server  LOG      ✓ Compiled in 6ms
+[00:42:10.324] Server  LOG      ✓ Compiled in 6ms
+[00:42:10.467] Server  LOG      ✓ Compiled in 5ms
+[00:42:10.542] Server  LOG      ✓ Compiled in 0ms
+[00:43:43.984] Server  WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[00:43:44.017] Browser LOG     Refreshing page data due to server-side change
+[00:43:44.839] Browser LOG     Refreshing page data due to server-side change
+[00:43:50.854] Server  WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[00:43:51.074] Server  WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[00:43:51.101] Server  LOG      ✓ Compiled in 4ms
+[00:43:51.102] Browser LOG     Refreshing page data due to server-side change
+[00:43:51.276] Server  WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[00:43:51.304] Server  LOG      ✓ Compiled in 3ms
+[00:43:51.304] Browser LOG     Refreshing page data due to server-side change
+[00:43:51.440] Server  WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[00:43:51.466] Server  LOG      ✓ Compiled in 2ms
+[00:43:51.635] Server  WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[00:43:51.663] Server  LOG      ✓ Compiled in 0ms
+[00:43:51.663] Browser LOG     Refreshing page data due to server-side change
+[00:43:51.791] Server  WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[00:43:51.924] Browser LOG     Refreshing page data due to server-side change
+[00:43:51.924] Browser LOG     Refreshing page data due to server-side change
+[00:43:51.924] Browser LOG     Refreshing page data due to server-side change
+[00:43:51.924] Browser LOG     Refreshing page data due to server-side change
+[00:43:56.646] Browser WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[00:44:21.216] Server  WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[00:44:21.264] Browser LOG     Refreshing page data due to server-side change
+[00:44:22.067] Browser LOG     Refreshing page data due to server-side change
+[00:44:23.183] Server  WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[00:44:23.239] Browser LOG     Refreshing page data due to server-side change
+[00:44:24.070] Browser LOG     Refreshing page data due to server-side change
+[00:44:28.286] Server  WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[00:44:28.311] Browser LOG     Refreshing page data due to server-side change
+[00:44:29.159] Browser LOG     Refreshing page data due to server-side change
+[00:44:35.725] Browser WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[00:44:47.879] Server  WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[00:44:47.904] Browser LOG     Refreshing page data due to server-side change
+[00:44:48.077] Server  WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[00:44:48.103] Server  LOG      ✓ Compiled in 5ms
+[00:44:48.103] Browser LOG     Refreshing page data due to server-side change
+[00:44:48.238] Server  WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[00:44:48.262] Server  LOG      ✓ Compiled in 2ms
+[00:44:48.408] Server  WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[00:44:48.433] Server  LOG      ✓ Compiled in 0ms
+[00:44:48.593] Server  WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[00:44:48.618] Server  LOG      ✓ Compiled in 0ms
+[00:44:48.619] Browser LOG     Refreshing page data due to server-side change
+[00:44:48.756] Server  WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[00:44:49.020] Server  WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[00:44:49.057] Browser LOG     Refreshing page data due to server-side change
+[00:44:49.925] Browser LOG     Refreshing page data due to server-side change
+[00:44:49.925] Browser LOG     Refreshing page data due to server-side change
+[00:44:49.925] Browser LOG     Refreshing page data due to server-side change
+[00:44:49.925] Browser LOG     Refreshing page data due to server-side change
+[00:44:49.925] Browser LOG     Refreshing page data due to server-side change
+[00:45:37.213] Server  WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[00:45:37.244] Browser LOG     Refreshing page data due to server-side change
+[00:45:38.034] Browser LOG     Refreshing page data due to server-side change
+[00:45:39.235] Server  WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[00:45:39.262] Browser LOG     Refreshing page data due to server-side change
+[00:45:40.096] Browser LOG     Refreshing page data due to server-side change
+[00:45:51.744] Server  LOG      ✓ Compiled in 6ms
+[00:45:51.967] Server  LOG      ✓ Compiled in 6ms
+[00:45:53.862] Server  LOG      ✓ Compiled in 18ms
+[00:46:07.290] Server  WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[00:46:07.317] Browser LOG     Refreshing page data due to server-side change
+[00:46:07.317] Browser LOG     Refreshing page data due to server-side change
+[00:46:07.505] Server  WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[00:46:07.532] Server  LOG      ✓ Compiled in 3ms
+[00:46:07.533] Browser LOG     Refreshing page data due to server-side change
+[00:46:07.699] Server  WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[00:46:07.722] Server  LOG      ✓ Compiled in 0ms
+[00:46:07.723] Browser LOG     Refreshing page data due to server-side change
+[00:46:07.878] Server  WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[00:46:07.905] Server  LOG      ✓ Compiled in 0ms
+[00:46:07.905] Browser LOG     Refreshing page data due to server-side change
+[00:46:08.071] Server  WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[00:46:08.097] Server  LOG      ✓ Compiled in 3ms
+[00:46:08.098] Browser LOG     Refreshing page data due to server-side change
+[00:46:08.253] Server  WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[00:46:08.282] Browser LOG     Refreshing page data due to server-side change
+[00:46:08.392] Browser LOG     Refreshing page data due to server-side change
+[01:00:40.506] Browser WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[01:09:41.798] Browser WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[02:28:41.187] Server  LOG      ✓ Compiled in 4ms
+[02:28:56.265] Server  WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[02:28:57.121] Browser LOG     Refreshing page data due to server-side change
+[02:29:05.468] Browser WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[02:29:10.028] Browser WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[02:29:25.186] Browser WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+[02:29:38.855] Browser WARN    Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"). Use Document instead. 
+See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component

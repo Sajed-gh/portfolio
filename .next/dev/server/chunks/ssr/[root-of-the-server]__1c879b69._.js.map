@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 10, "column": 0}, "map": {"version":3,"sources":["file:///home/sajed/Desktop/Projects/portfolio/pages/_app.js"],"sourcesContent":["// pages/_app.js\nimport '../styles/globals.css'\n// The path is correct, assuming you renamed your style.css to globals.css\n\nfunction MyApp({ Component, pageProps }) {\n  return <Component {...pageProps} />\n}\n\nexport default MyApp"],"names":[],"mappings":"AAAA,gBAAgB;;;;;;;;AAEhB,0EAA0E;AAE1E,SAAS,MAAM,EAAE,SAAS,EAAE,SAAS,EAAE;IACrC,qBAAO,qKAAC;QAAW,GAAG,SAAS;;;;;;AACjC;uCAEe"}}]
-}

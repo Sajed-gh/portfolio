@@ -3,6 +3,7 @@ import { useEffect, useRef } from 'react';
 import { contactInfo, projectsData, blogPosts } from '../data/portfolioData';
 import { FiDownload } from 'react-icons/fi'; // For CV Download Button
 import { SiLinkedin, SiGithub, SiX } from 'react-icons/si'; // For Social Links (Simple Icons)
+import Image from 'next/image';
 
 // Custom Hook to replace IntersectionObserver logic in main.js
 const useSectionReveal = () => {
@@ -51,35 +52,37 @@ const CVDownloadButton = ({ cvLink }) => (
 const HeroSection = ({ setSectionRef, cvLink }) => (
     <section className="hero" id="hero" ref={setSectionRef}>
         <CVDownloadButton cvLink={cvLink} />
-        <img 
-            src="images/IMG-20240517-WA0016.jpg" 
-            alt="Professional Portrait" 
+        <Image 
+            src="/assets/images/IMG-20240517-WA0016.jpg" 
+            alt="Professional Portrait of Sajed" 
             className="hero-avatar" 
-            loading="eager"
+            width={180} // Set the intrinsic width
+            height={180} // Set the intrinsic height
+            priority={true} // High priority for above-the-fold image
         />
         <div>
-            <h1 className="hero-title">Scaling Startups with Full-Stack Engineering and Applied AI.</h1>
-            <p className="hero-subtitle">Software Engineer · AI Specialist · Product-Focused Developer</p>
-            <p className="hero-copy">I build clean, high-performing web applications that drive user engagement...</p>
+            <h1 className="hero-title">Mohamed Sajed Gharsalli</h1>
+            <p className="hero-subtitle">AI Engineer · LLM and RAG Systems Architect · Computer Vision Specialist</p>
+            <p className="hero-copy">I specialize in transforming complex data into scalable, intelligent systems that solve real-world problems. Proven ability to bridge the gap between AI research and practical, impactful product development.</p>
             
             <div className="hero-stats">
                 <div className="stat-item">
-                    <div className="stat-number">5+</div>
+                    <div className="stat-number">1+</div>
                     <div className="stat-label">Years of Experience</div>
                 </div>
                 <div className="stat-item">
-                    <div className="stat-number">20+</div>
+                    <div className="stat-number">10+</div>
                     <div className="stat-label">Projects Completed</div>
                 </div>
                 <div className="stat-item">
-                    <div className="stat-number">98%</div>
-                    <div className="stat-label">Client Satisfaction</div>
+                    <div className="stat-number">90%</div>
+                    <div className="stat-label">Accuracy Achieved</div>
                 </div>
             </div>
             
             <div className="cta-buttons hero-cta">
-                <a href={`mailto:${contactInfo.email}`} className="btn primary">Email Me</a>
-                <a href={contactInfo.calendly} target="_blank" rel="noopener noreferrer" className="btn">Schedule Meeting</a>
+                <a href={`mailto:${contactInfo.email}`} className="btn">Email Me</a>
+                <a href={contactInfo.calendly} target="_blank" rel="noopener noreferrer" className="btn primary">Schedule Meeting</a>
             </div>
         </div>
     </section>
@@ -89,34 +92,35 @@ const ServiceSection = ({ setSectionRef }) => (
     <section className="services" id="services" ref={setSectionRef}>
         <h2>Services</h2>
         <div className="block-list list">
-            <span>UI/UX Design</span>
-            <span>Web Development</span>
-            <span>AI Integrations</span>
-            <span>Mobile Development</span>
+            <span>AI Agent Development</span>
+            <span>RAG & LLM Engineering</span>
+            <span>Computer Vision & OCR</span>
+            <span>API Integration</span>
         </div>
     </section>
 );
 
 const ValuePropSection = ({ setSectionRef }) => (
     <section className="value-prop" ref={setSectionRef}>
-        <h2>Why Choose Me</h2>
+        <h2>Why Partner With Me?</h2>
         <div className="block-list list">
-            <span>Clean, modern interfaces</span>
-            <span>Fast & scalable solutions</span>
-            <span>User-centered design</span>
-            <span>Strong communication</span>
+            <span>Engineering Mindset</span>
+            <span>Impact-Driven Solutions</span>
+            <span>Cross-Functional Collaboration</span>
+            <span>Continuous AI Innovation</span>
         </div>
     </section>
 );
 
 const ProcessSection = ({ setSectionRef }) => (
     <section className="process" ref={setSectionRef}>
-        <h2>Work Process</h2>
+        <h2>My Approach</h2>
         <div className="block-list list">
-            <span>1. Discovery & Planning</span>
-            <span>2. Design & Prototyping</span>
-            <span>3. Development & Testing</span>
-            <span>4. Deployment & Launch</span>
+            <span>1. Problem Definition & System Design</span>
+            <span>2. Prototyping & Iteration (MVP)</span>
+            <span>3. Deployment & Integration</span>
+            <span>4. Monitoring & Continuous Refinement</span>
+            
         </div>
     </section>
 );

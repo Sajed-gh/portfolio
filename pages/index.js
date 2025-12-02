@@ -53,14 +53,12 @@ export default function Home({ projects }) {
                 <meta name="viewport" content="width=device-width,initial-scale=1" />
                 <meta name="description" content="Portfolio of Sajed — Software Engineer & AI Specialist focused on scalable web solutions and product development."/>
                 <title>Portfolio — Sajed | Next.js Conversion</title>
-                <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+                <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
             </Head>
 
-            {/* --- NEW: Global Loader Overlay --- */}
             <div className={`global-loader ${!isLoading ? 'hidden' : ''}`}>
                 <div className="spinner"></div>
             </div>
-            {/* ---------------------------------- */}
 
             <FloatingNav />
             <PortfolioSections onProjectClick={handleProjectClick} />

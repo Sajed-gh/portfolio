@@ -30,6 +30,12 @@ export default function ProjectModal({ isOpen, project, onClose }) {
     };
 
     if (!project) return null;
+    
+    // 🚨 NEW LOGIC: Check if the URL is likely a local file
+    const isLocalVideo = project.videoUrl && 
+        !project.videoUrl.includes('youtube') && 
+        !project.videoUrl.includes('vimeo') &&
+        (project.videoUrl.endsWith('.mp4') || project.videoUrl.endsWith('.webm'));
 
     return (
         <div id="project-modal" className="modal" style={modalStyle} onClick={(e) => {
@@ -41,17 +47,17 @@ export default function ProjectModal({ isOpen, project, onClose }) {
                 <h2 id="modal-title">{project.title}</h2>
 
                 <div className="video-container">
-                    {/* The videoUrl includes ?autoplay=1, so we just set the src */}
-                    <iframe 
-                        id="project-video" 
-                        title="Project Demo Video" 
-                        src={isOpen ? project.videoUrl : ''} // Only load/autoplay if open
-                        frameBorder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                        allowFullScreen
-                    ></iframe>
+                        <video 
+                            id="project-video" 
+                            controls 
+                            autoPlay={isOpen} // Only autoplay when modal is open
+                            loop 
+                            muted // Required for reliable autoplay
+                            playsInline
+                            src={project.videoUrl}
+                            title="Project Demo Video"
+                        />
                 </div>
-
                 <h3 style={{fontSize: '1rem', fontWeight: 500, marginTop: '15px'}}>Overview:</h3>
                 <p id="modal-desc">{project.desc}</p>
                 <h3 style={{fontSize: '1rem', fontWeight: 500, marginTop: '15px'}}>Tags:</h3>

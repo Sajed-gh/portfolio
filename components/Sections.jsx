@@ -1,11 +1,10 @@
-// components/Sections.jsx
 import { useEffect, useRef } from 'react';
 import { contactInfo, projectsData, blogPosts } from '../data/portfolioData';
-import { FiDownload } from 'react-icons/fi'; // For CV Download Button
-import { SiLinkedin, SiGithub, SiX } from 'react-icons/si'; // For Social Links (Simple Icons)
+import { FiDownload } from 'react-icons/fi'; 
+import { SiLinkedin, SiGithub, SiX } from 'react-icons/si'; 
 import Image from 'next/image';
+import Carousel from './Carousel';
 
-// Custom Hook to replace IntersectionObserver logic in main.js
 const useSectionReveal = () => {
     const sectionRefs = useRef([]);
 
@@ -26,7 +25,6 @@ const useSectionReveal = () => {
         return () => observer.disconnect();
     }, []);
 
-    // Function to assign ref to each section
     const setSectionRef = (el) => {
         if (el && !sectionRefs.current.includes(el)) {
             sectionRefs.current.push(el);
@@ -36,7 +34,6 @@ const useSectionReveal = () => {
     return setSectionRef;
 };
 
-// --- Sub-Components for Organization ---
 
 const CVDownloadButton = ({ cvLink }) => (
     <div className="cv-download-container">
@@ -56,9 +53,9 @@ const HeroSection = ({ setSectionRef, cvLink }) => (
             src="/assets/images/IMG-20240517-WA0016.jpg" 
             alt="Professional Portrait of Sajed" 
             className="hero-avatar" 
-            width={180} // Set the intrinsic width
-            height={180} // Set the intrinsic height
-            priority={true} // High priority for above-the-fold image
+            width={180} 
+            height={180} 
+            priority={true} 
         />
         <div>
             <h1 className="hero-title">Mohamed Sajed Gharsalli</h1>
@@ -80,7 +77,7 @@ const HeroSection = ({ setSectionRef, cvLink }) => (
                 </div>
             </div>
             
-            <div className="cta-buttons hero-cta">
+            <div className="cta-buttons">
                 <a href={`mailto:${contactInfo.email}`} className="btn">Email Me</a>
                 <a href={contactInfo.calendly} target="_blank" rel="noopener noreferrer" className="btn primary">Schedule Meeting</a>
             </div>
@@ -91,7 +88,7 @@ const HeroSection = ({ setSectionRef, cvLink }) => (
 const ServiceSection = ({ setSectionRef }) => (
     <section className="services" id="services" ref={setSectionRef}>
         <h2>Services</h2>
-        <div className="block-list list">
+        <div className="block-list">
             <span>AI Agent Development</span>
             <span>RAG & LLM Engineering</span>
             <span>Computer Vision & OCR</span>
@@ -103,7 +100,7 @@ const ServiceSection = ({ setSectionRef }) => (
 const ValuePropSection = ({ setSectionRef }) => (
     <section className="value-prop" ref={setSectionRef}>
         <h2>Why Partner With Me?</h2>
-        <div className="block-list list">
+        <div className="block-list">
             <span>Engineering Mindset</span>
             <span>Impact-Driven Solutions</span>
             <span>Cross-Functional Collaboration</span>
@@ -115,7 +112,7 @@ const ValuePropSection = ({ setSectionRef }) => (
 const ProcessSection = ({ setSectionRef }) => (
     <section className="process" ref={setSectionRef}>
         <h2>My Approach</h2>
-        <div className="block-list list">
+        <div className="block-list">
             <span>1. Problem Definition & System Design</span>
             <span>2. Prototyping & Iteration (MVP)</span>
             <span>3. Deployment & Integration</span>
@@ -125,46 +122,81 @@ const ProcessSection = ({ setSectionRef }) => (
     </section>
 );
 
-const ProjectsSection = ({ setSectionRef, onProjectClick }) => (
-    <section className="projects" id="projects" ref={setSectionRef}>
-        <h2>Latest Work</h2>
-        <div className="gallery">
-            {Object.entries(projectsData).map(([id, project]) => (
-                <div 
-                    key={id}
-                    className="project-card" 
-                    data-project={id} 
-                    onClick={() => onProjectClick(id)}
-                >
-                    <div className="project-thumb">{project.thumbText}</div>
-                    <h3>{project.title}</h3>
-                    <div className="tags">
-                        {project.tags.slice(0, 3).map(tag => (
-                            <span key={tag} className="tag">{tag}</span>
-                        ))}
-                        {project.tags.length > 3 && <span className="tag">...</span>}
-                    </div>
-                </div>
-            ))}
-        </div>
-    </section>
-);
+const ProjectsSection = ({ setSectionRef, onProjectClick }) => {
+    const projects = Object.entries(projectsData).map(([id, project]) => ({
+        id,
+        ...project
+    }));
 
-const BlogSection = ({ setSectionRef }) => (
-    <section className="blogs" id="blogs" ref={setSectionRef}>
-        <h2>From the Blog</h2>
-        <div className="blog-gallery">
-            {blogPosts.map(post => (
-                <a key={post.id} href="#" className="blog-card">
-                    <div className="blog-thumb">{post.thumbText}</div>
-                    <h3>{post.title}</h3>
-                    <p>{post.summary}</p>
-                    <span className="blog-date">{post.date}</span>
-                </a>
-            ))}
+    const renderProjectCard = (project) => (
+        <div 
+            className="project-card" 
+            data-project={project.id} 
+            onClick={() => onProjectClick(project.id)}
+            role="button"
+            tabIndex="0"
+            onKeyPress={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    onProjectClick(project.id);
+                }
+            }}
+        >
+            <div className="project-thumb">{project.thumbText}</div>
+            <h3>{project.title}</h3>
+            <div className="tags">
+                {project.tags.slice(0, 3).map(tag => (
+                    <span key={tag} className="tag">{tag}</span>
+                ))}
+                {project.tags.length > 3 && <span className="tag">...</span>}
+            </div>
         </div>
-    </section>
-);
+    );
+
+    return (
+        <section className="projects" id="projects" ref={setSectionRef}>
+            <h2>Latest Work</h2>
+            <Carousel
+                items={projects}
+                renderItem={renderProjectCard}
+                config={{
+                    visibleCount: { desktop: 1, tablet: 1, mobile: 1 },
+                    animationSpeed: 500,
+                    showDots: true,
+                    showButtons: true,
+                    className: 'projects-carousel'
+                }}
+            />
+        </section>
+    );
+};
+
+const BlogSection = ({ setSectionRef }) => {
+    const renderBlogCard = (post) => (
+        <a href="#" className="blog-card">
+            <div className="blog-thumb">{post.thumbText}</div>
+            <h3>{post.title}</h3>
+            <p>{post.summary}</p>
+            <span className="blog-date">{post.date}</span>
+        </a>
+    );
+
+    return (
+        <section className="blogs" id="blogs" ref={setSectionRef}>
+            <h2>From the Blog</h2>
+            <Carousel
+                items={blogPosts}
+                renderItem={renderBlogCard}
+                config={{
+                    visibleCount: 1,
+                    animationSpeed: 500,
+                    showDots: true,
+                    showButtons: true,
+                    className: 'blogs-carousel'
+                }}
+            />
+        </section>
+    );
+};
 
 const PresenceSection = ({ setSectionRef, links }) => (
     <section className="presence" ref={setSectionRef}>
@@ -172,23 +204,18 @@ const PresenceSection = ({ setSectionRef, links }) => (
         <p>Connect with me on my platforms.</p>
         <div className="presence-links">
             
-            {/* LinkedIn */}
             <a href={links.linkedin} target="_blank" rel="noopener noreferrer">
-                {/* Replace SVG with SiLinkedin */}
                 <SiLinkedin size={20} />
                 LinkedIn
             </a>
             
-            {/* X (formerly Twitter) */}
             <a href={links.x} target="_blank" rel="noopener noreferrer">
-                {/* Replace SVG with SiX */}
                 <SiX size={20} />
                 X
             </a>
             
-            {/* GitHub */}
+            
             <a href={links.github} target="_blank" rel="noopener noreferrer">
-                {/* Replace SVG with SiGithub */}
                 <SiGithub size={20} />
                 GitHub
             </a>
@@ -212,7 +239,6 @@ const LetsWorkSection = ({ setSectionRef, links }) => (
 // --- Main Exported Component ---
 
 export default function PortfolioSections({ onProjectClick }) {
-    // Call the custom hook to get the ref setter
     const setSectionRef = useSectionReveal();
     
     return (

@@ -5,7 +5,6 @@ import FloatingNav from '../components/FloatingNav';
 import ProjectModal from '../components/ProjectModal';
 import ScrollToTopButton from '../components/ScrollToTopButton';
 
-// Data Fetching
 export async function getStaticProps() {
     const { projectsData } = await import('../data/portfolioData');
     return {
@@ -16,15 +15,12 @@ export async function getStaticProps() {
 }
 
 export default function Home({ projects }) {
-    // --- NEW: Global Loading State ---
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        // Simulate a brief loading delay or wait for assets
-        // This makes the transition feel smoother
         const timer = setTimeout(() => {
             setIsLoading(false);
-        }, 1000); // 1 second load time
+        }, 1000);
 
         return () => clearTimeout(timer);
     }, []);

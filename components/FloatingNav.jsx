@@ -38,7 +38,6 @@ export default function FloatingNav() {
         document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
     };
 
-    // Determine which icon component to use
     const ThemeIcon = theme === 'dark' ? FiSun : FiMoon; 
 
     return (

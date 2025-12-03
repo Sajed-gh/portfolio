@@ -1,8 +1,6 @@
-// components/ProjectModal.jsx
 import { useEffect, useCallback } from 'react';
 
 export default function ProjectModal({ isOpen, project, onClose }) {
-    // Escape key closes the modal (replaces main.js keydown listener)
     const handleKeyDown = useCallback((e) => {
         if (e.key === "Escape") {
             onClose();
@@ -12,7 +10,7 @@ export default function ProjectModal({ isOpen, project, onClose }) {
     useEffect(() => {
         if (isOpen) {
             document.addEventListener('keydown', handleKeyDown);
-            document.body.style.overflow = 'hidden'; // Prevents background scroll
+            document.body.style.overflow = 'hidden';
         } else {
             document.removeEventListener('keydown', handleKeyDown);
             document.body.style.overflow = 'unset';
@@ -23,15 +21,12 @@ export default function ProjectModal({ isOpen, project, onClose }) {
         };
     }, [isOpen, handleKeyDown]);
 
-    // Use inline style to control visibility (overriding the CSS 'display: none')
     const modalStyle = {
         display: isOpen ? 'flex' : 'none',
-        // Preserve other styles like position, inset, etc. from globals.css
     };
 
     if (!project) return null;
     
-    // 🚨 NEW LOGIC: Check if the URL is likely a local file
     const isLocalVideo = project.videoUrl && 
         !project.videoUrl.includes('youtube') && 
         !project.videoUrl.includes('vimeo') &&
@@ -39,7 +34,6 @@ export default function ProjectModal({ isOpen, project, onClose }) {
 
     return (
         <div id="project-modal" className="modal" style={modalStyle} onClick={(e) => {
-            // Close modal on background click (replaces main.js modal listener)
             if (e.target.id === 'project-modal') onClose();
         }}>
             <div className="modal-content">
@@ -50,9 +44,9 @@ export default function ProjectModal({ isOpen, project, onClose }) {
                         <video 
                             id="project-video" 
                             controls 
-                            autoPlay={isOpen} // Only autoplay when modal is open
+                            autoPlay={isOpen} 
                             loop 
-                            muted // Required for reliable autoplay
+                            muted 
                             playsInline
                             src={project.videoUrl}
                             title="Project Demo Video"

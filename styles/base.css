@@ -1,0 +1,88 @@
+/* styles/base.css */
+:root {
+  --bg:#F5F5F7;
+  --card:#FFFFFF;
+  --text:#1D1D1F;
+  --muted:#6E6E73;
+  --accent:#0071E3;
+  --border:rgba(0,0,0,.08);
+  --shadow: 0 10px 20px rgba(0, 0, 0, .06);
+  --radius:18px;
+  --gap:20px;
+  --max:1300px;
+  --trans-base: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --trans-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dark-mode {
+  --bg:#1E1E1E;
+  --card:#2C2C2C;
+  --text:#FFFFFF;
+  --muted:#B0B0B0;
+  --border:rgba(255,255,255,.1);
+  --shadow:0 6px 18px rgba(0,0,0,.2); 
+  --accent:#308FFC;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+body{
+  background: var(--bg);
+  font-family:'Plus Jakarta Sans',sans-serif;
+  color:var(--text);
+  display:flex;
+  justify-content:center;
+  padding:40px 16px;
+  overflow-x: hidden; 
+  padding-top: 80px; 
+  scroll-behavior: smooth; 
+  transition: background 0.3s ease, color 0.3s ease;
+  scroll-padding-top: 100px; 
+}
+
+h1{font-size:2.6rem;font-weight:600;margin-bottom:6px}
+h2{font-size:1.45rem;font-weight:600;margin-bottom:12px}
+h3{font-size:1.1rem;font-weight:600;margin-bottom:8px}
+p{color:var(--muted);margin-bottom:12px;line-height:1.55}
+
+/* Global Buttons */
+.btn {
+    padding: 12px 24px; border-radius: 12px; border: 1px solid var(--border);
+    background: transparent; font-weight: 600; cursor: pointer;
+    transition: var(--trans-base); color: var(--text); text-decoration: none;
+    display: inline-flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--accent);
+}
+
+.btn:active { transform: translateY(0); }
+
+.btn.primary { background: var(--accent); color: white; border: 1px solid var(--accent); }
+.btn.primary:hover {
+    box-shadow: 0 8px 20px rgba(0, 113, 227, 0.35); 
+    filter: brightness(1.1);
+}
+
+.cta-buttons { display: flex; gap: 16px; margin-top: 24px; flex-wrap: wrap; }
+
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+@media(max-width:680px){
+    body { padding-bottom: 100px; padding-top: 20px; }
+    .cta-buttons { width: 100%; flex-direction: column; gap: 12px; }
+    .btn { width: 100%; }
+}

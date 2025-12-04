@@ -1,0 +1,20 @@
+/* styles/components/Lists.css */
+.block-list {
+    display: grid; grid-template-columns: 1fr; gap: 10px; color: var(--text); margin-top: 15px;
+}
+
+.block-list span {
+    background: var(--bg); border-radius: 10px; padding: 14px 18px;
+    border: 1px solid var(--border); font-weight: 500; color: var(--text);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
+    line-height: 1.2;
+}
+
+.block-list span:hover { transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.05); }
+
+@media(max-width:900px) {
+  .block-list { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+}
+@media(max-width:680px){
+  .block-list { grid-template-columns: 1fr; }
+}

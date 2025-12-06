@@ -53,6 +53,19 @@
 }
 .download-btn:hover .text { opacity: 1; transform: translateX(0); }
 
+/* ADDED: Typing Cursor Styling and Animation */
+.typing-cursor {
+    display: inline-block;
+    color: var(--accent); 
+    animation: blink-caret 0.75s step-end infinite;
+    margin-left: 2px;
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: var(--accent); }
+}
+
 @media(max-width:680px){
   .hero{flex-direction:column;text-align:center}
   .hero-avatar{width:130px;height:130px} 

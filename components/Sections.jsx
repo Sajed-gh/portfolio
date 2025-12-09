@@ -131,7 +131,7 @@ const HeroSection = ({ setSectionRef, cvLink }) => {
         <section className="hero" id="hero" ref={setSectionRef}>
             <CVDownloadButton cvLink={cvLink} />
             <Image 
-                src="/assets/images/IMG-20240517-WA0016.jpg" 
+                src="/assets/images/hero_img.jpg" 
                 alt="Professional Portrait of Sajed" 
                 className="hero-avatar" 
                 width={180} 
@@ -204,7 +204,6 @@ const ServiceSection = ({ setSectionRef }) => (
 
 
 // ------------------------------------------------------------------
-// ValuePropSection MODIFIED: Added .service-header wrapper
 // ------------------------------------------------------------------
 const ValuePropSection = ({ setSectionRef }) => (
     <section className="value-prop" ref={setSectionRef}>
@@ -274,11 +273,6 @@ const ProjectsSection = ({ setSectionRef, onProjectClick }) => {
             onClick={() => onProjectClick(project.id)}
             role="button"
             tabIndex="0"
-            onKeyPress={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    onProjectClick(project.id);
-                }
-            }}
         >
             <div className="project-thumb">{project.thumbText}</div>
             <h3>{project.title}</h3>

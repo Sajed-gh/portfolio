@@ -12,11 +12,12 @@ export const contactInfo = {
 
 export const projectsData = {
     1: {
-        title: "The Insight Platform: E-commerce Analytics",
-        desc: "This platform was developed for a client to consolidate sales and traffic data from multiple sources (Shopify, Google Analytics) into a single, real-time dashboard. The goal was to provide small business owners with actionable insights without needing dedicated analysts. **Key Result:** Client reported a 25% increase in conversion rate within the first quarter due to data-driven product adjustments.",
-        tags: ["React", "Redux", "Node.js", "MongoDB", "Chart.js"],
-        videoUrl: "assets/videos/test.mp4", 
-        thumbText: "Analytics Dashboard UI"
+        title: "Digital Mirror: Real-Time Avatar Mimic",
+        desc: "This project is a real-time avatar mimic system that mirrors facial expressions and hand gestures on a virtual avatar. Users can see their smiles, winks, and hand movements reflected instantly, creating an interactive, playful experience.",
+        keyResults: "Showcases interactive computer vision in action, with potential applications in AR/VR, virtual meetings, and gesture-controlled interfaces.",
+        tags: ["Python", "OpenCV", "MediaPipe", "Computer Vision", "Augmented Reality", "Real-Time Tracking"],
+        videoUrl: "assets/videos/avatar_mimic_demo.mp4", 
+        thumbText: "Avatar Mimic Demo",
     },
     2: {
         title: "LexiScan: Automated Document Processor",

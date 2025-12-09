@@ -54,6 +54,12 @@ export default function ProjectModal({ isOpen, project, onClose }) {
                 </div>
                 <h3 style={{fontSize: '1rem', fontWeight: 500, marginTop: '15px'}}>Overview:</h3>
                 <p id="modal-desc">{project.desc}</p>
+                {project.keyResults && (
+                    <>
+                        <h3 style={{fontSize: '1rem', fontWeight: 500, marginTop: '15px'}}>Key Results:</h3>
+                        <p id="modal-key-results">{project.keyResults}</p>
+                    </>
+                    )}
                 <h3 style={{fontSize: '1rem', fontWeight: 500, marginTop: '15px'}}>Tags:</h3>
                 <div id="modal-tags" className="tags">
                     {project.tags.map(tag => (

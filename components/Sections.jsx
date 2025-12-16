@@ -2,24 +2,20 @@
 
 import { useEffect, useRef, useState } from 'react'; 
 import { contactInfo, projectsData, blogPosts } from '../data/portfolioData';
-// Import necessary icons
 import { 
-    FiDownload, FiCpu, FiMessageSquare, FiEye, FiCode, // Services
-    FiZap, FiTarget, FiUsers, FiRefreshCw, // Value Props
-    FiSearch, FiTrello, FiUploadCloud, FiActivity // Process Steps
+    FiCpu, FiMessageSquare, FiEye, FiCode,
+    FiZap, FiTarget, FiUsers, FiRefreshCw,
+    FiSearch, FiTrello, FiUploadCloud, FiActivity
 } from 'react-icons/fi'; 
 import { SiLinkedin, SiGithub, SiX } from 'react-icons/si'; 
 import Image from 'next/image';
 import Carousel from './Carousel';
 
-// --- Icon Map for dynamic rendering ---
 const IconMap = {
     FiCpu, FiMessageSquare, FiEye, FiCode,
     FiZap, FiTarget, FiUsers, FiRefreshCw,
     FiSearch, FiTrello, FiUploadCloud, FiActivity,
 };
-
-// --- DATA STRUCTURES (Simulated) ---
 
 const serviceData = [
     { title: "AI Agent Development", icon: "FiCpu", desc: "Building goal-oriented, autonomous systems for task execution and decision-making." },
@@ -41,9 +37,6 @@ const processData = [
     { title: "3. Deployment & Integration", icon: "FiUploadCloud", desc: "Seamlessly pushing the solution into your live production environment." },
     { title: "4. Monitoring & Refinement", icon: "FiActivity", desc: "Tracking performance and making data-driven improvements post-launch." },
 ];
-
-// ------------------------------------------------------------------
-
 
 const useSectionReveal = () => {
     const sectionRefs = useRef([]);
@@ -75,53 +68,45 @@ const useSectionReveal = () => {
 };
 
 
-const CVDownloadButton = ({ cvLink }) => (
-    <div className="cv-download-container">
-        <a id="cv-download-link" href={cvLink} download className="download-btn" aria-label="Download My CV">
-            <span className="icon">
-                <FiDownload size={18} />
-            </span>
-            <span className="text">Get My CV</span>
-        </a>
-    </div>
-);
-
 const HeroSection = ({ setSectionRef, cvLink }) => {
     
-    // Typing Effect Logic
-    const roles = ["AI Engineer", "LLM Systems Architect", "Computer Vision Specialist"];
+    const roles = ["AIEngineer", "LLM Systems Architect", "Computer Vision Specialist"];
     
-    const [currentText, setCurrentText] = useState(roles[0]);
+    const [currentText, setCurrentText] = useState(""); 
     const [roleIndex, setRoleIndex] = useState(0);
-    const [charIndex, setCharIndex] = useState(roles[0].length);
-    const [isDeleting, setIsDeleting] = useState(true); 
+    const [charIndex, setCharIndex] = useState(0); 
+    const [isDeleting, setIsDeleting] = useState(false); 
     
     useEffect(() => {
         let timer;
         const currentRole = roles[roleIndex % roles.length];
-        const typingSpeed = isDeleting ? 40 : 100;
+        
+        const typeSpeed = 50 + Math.random() * 50; 
+        const deleteSpeed = 40;
+        const pauseEnd = 2000;
+        const pauseStart = 500;
 
         if (!isDeleting && charIndex < currentRole.length) {
-            // Typing
             timer = setTimeout(() => {
                 setCurrentText(currentRole.substring(0, charIndex + 1));
                 setCharIndex(charIndex + 1);
-            }, typingSpeed);
+            }, typeSpeed);
+
         } else if (isDeleting && charIndex > 0) {
-            // Deleting
             timer = setTimeout(() => {
                 setCurrentText(currentRole.substring(0, charIndex - 1));
                 setCharIndex(charIndex - 1);
-            }, typingSpeed / 2);
+            }, deleteSpeed);
+
         } else if (!isDeleting && charIndex === currentRole.length) {
-            // Pause before deleting
             timer = setTimeout(() => {
                 setIsDeleting(true);
-            }, 1500);
+            }, pauseEnd);
+
         } else if (isDeleting && charIndex === 0) {
-            // Done deleting, move to next word
             setIsDeleting(false);
             setRoleIndex(prev => prev + 1);
+            timer = setTimeout(() => {}, pauseStart); 
         }
 
         return () => clearTimeout(timer);
@@ -129,19 +114,19 @@ const HeroSection = ({ setSectionRef, cvLink }) => {
 
     return (
         <section className="hero" id="hero" ref={setSectionRef}>
-            <CVDownloadButton cvLink={cvLink} />
-            <Image 
-                src="/assets/images/hero_img.jpg" 
-                alt="Professional Portrait of Sajed" 
-                className="hero-avatar" 
-                width={180} 
-                height={180} 
-                priority={true} 
-            />
+            <div className="hero-avatar-wrapper">
+                <Image 
+                    src="/assets/images/hero_img.jpg" 
+                    alt="Professional Portrait of Sajed" 
+                    className="hero-avatar" 
+                    width={180} 
+                    height={180} 
+                    priority={true} 
+                />
+            </div>
             <div>
                 <h1 className="hero-title">Mohamed Sajed Gharsalli</h1>
                 
-                {/* Dynamically display the typed text and cursor */}
                 <p className="hero-subtitle">
                     {currentText}
                     <span className="typing-cursor">|</span> 
@@ -165,6 +150,7 @@ const HeroSection = ({ setSectionRef, cvLink }) => {
                 </div>
                 
                 <div className="cta-buttons">
+                    <a href={cvLink} download className="btn">Get My CV</a>
                     <a href={`mailto:${contactInfo.email}`} className="btn">Email Me</a>
                     <a href={contactInfo.calendly} target="_blank" rel="noopener noreferrer" className="btn primary">Schedule Meeting</a>
                 </div>
@@ -173,26 +159,22 @@ const HeroSection = ({ setSectionRef, cvLink }) => {
     );
 };
 
-
-// ------------------------------------------------------------------
-// ServiceSection MODIFIED: Added .service-header wrapper
-// ------------------------------------------------------------------
 const ServiceSection = ({ setSectionRef }) => (
     <section className="services" id="services" ref={setSectionRef}>
         <h2>Services</h2>
-        <div className="block-list service-card-list-override"> 
+        <div className="block-list services-grid"> 
             {serviceData.map((item, index) => {
                 const IconComponent = IconMap[item.icon];
                 return (
-                    <div key={index} className="service-card" tabIndex="0"> 
-                        <div className="service-header"> {/* NEW WRAPPER */}
+                    <div key={index} className="service-card matrix-card" tabIndex="0"> 
+                        <div className="service-header">
                             {IconComponent && (
                                 <div className="service-icon-wrapper">
                                     <IconComponent size={30} />
                                 </div>
                             )}
                             <p className="service-title">{item.title}</p>
-                        </div> {/* END NEW WRAPPER */}
+                        </div>
                         <p className="service-desc">{item.desc}</p>
                     </div>
                 );
@@ -200,27 +182,23 @@ const ServiceSection = ({ setSectionRef }) => (
         </div>
     </section>
 );
-// ------------------------------------------------------------------
 
-
-// ------------------------------------------------------------------
-// ------------------------------------------------------------------
 const ValuePropSection = ({ setSectionRef }) => (
     <section className="value-prop" ref={setSectionRef}>
         <h2>Why Partner With Me?</h2>
-        <div className="block-list service-card-list-override">
+        <div className="block-list value-list">
             {valuePropData.map((item, index) => {
                 const IconComponent = IconMap[item.icon];
                 return (
-                    <div key={index} className="service-card" tabIndex="0"> 
-                        <div className="service-header"> {/* NEW WRAPPER */}
+                    <div key={index} className="service-card list-card" tabIndex="0"> 
+                        <div className="service-header">
                             {IconComponent && (
                                 <div className="service-icon-wrapper">
-                                    <IconComponent size={30} />
+                                    <IconComponent size={24} />
                                 </div>
                             )}
                             <p className="service-title">{item.title}</p>
-                        </div> {/* END NEW WRAPPER */}
+                        </div>
                         <p className="service-desc">{item.desc}</p>
                     </div>
                 );
@@ -228,28 +206,23 @@ const ValuePropSection = ({ setSectionRef }) => (
         </div>
     </section>
 );
-// ------------------------------------------------------------------
 
-
-// ------------------------------------------------------------------
-// ProcessSection MODIFIED: Added .service-header wrapper
-// ------------------------------------------------------------------
 const ProcessSection = ({ setSectionRef }) => (
     <section className="process" ref={setSectionRef}>
         <h2>My Approach</h2>
-        <div className="block-list service-card-list-override">
+        <div className="block-list process-timeline">
             {processData.map((item, index) => {
                 const IconComponent = IconMap[item.icon];
                 return (
-                    <div key={index} className="service-card" tabIndex="0"> 
-                        <div className="service-header"> {/* NEW WRAPPER */}
+                    <div key={index} className="service-card timeline-card" tabIndex="0"> 
+                        <div className="service-header">
                             {IconComponent && (
                                 <div className="service-icon-wrapper">
                                     <IconComponent size={30} />
                                 </div>
                             )}
                             <p className="service-title">{item.title}</p>
-                        </div> {/* END NEW WRAPPER */}
+                        </div>
                         <p className="service-desc">{item.desc}</p>
                     </div>
                 );
@@ -257,8 +230,6 @@ const ProcessSection = ({ setSectionRef }) => (
         </div>
     </section>
 );
-// ------------------------------------------------------------------
-
 
 const ProjectsSection = ({ setSectionRef, onProjectClick }) => {
     const projects = Object.entries(projectsData).map(([id, project]) => ({

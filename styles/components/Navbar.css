@@ -1,10 +1,9 @@
-/* styles/components/Navbar.css (Fixed Mobile Alignment) */
 .floating-nav {
   position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
   z-index: 1000; background: var(--card); opacity: 0.95;
   backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
   padding: 10px 24px; border-radius: 50px; border: 1px solid var(--border);
-  box-shadow: var(--shadow); display: flex; align-items: center; gap: 24px;border-radius: 30px;
+  box-shadow: var(--shadow); display: flex; align-items: center; gap: 24px;
 }
 
 .floating-nav a {
@@ -13,9 +12,7 @@
   padding: 6px 0; border-radius: 30px;
 }
 
-.floating-nav a:hover:not(.active) { color: var(--accent); transform: translateY(-1px);border-radius: 30px; }
-
-
+.floating-nav a:hover:not(.active) { color: var(--accent); transform: translateY(-1px); }
 
 .floating-nav a.active {
     color: var(--card); 
@@ -31,11 +28,7 @@
     background: var(--accent);
     transform: translateY(-1px);
     filter: brightness(1.05); 
-    border-radius: 30px;
 }
-
-/* --- END ACTIVE STYLES --- */
-
 
 .theme-toggle {
     background: transparent; border: none; cursor: pointer; padding: 0;
@@ -43,29 +36,48 @@
     border-radius: 50%; color: var(--text);
     transition: transform 0.2s ease, background 0.2s ease;
 }
-.theme-toggle:hover { transform: scale(1.1); background: rgba(0,0,0,0.05); border-radius: 30px;}
+
+.theme-toggle:hover { transform: scale(1.1); background: rgba(0,0,0,0.05); }
 .dark-mode .theme-toggle:hover { background: rgba(255,255,255,0.08); }
 
+.theme-toggle.rotate-active .icon {
+    animation: rotate-icon 0.5s ease-in-out;
+}
 
-/* Media Queries */
+@keyframes rotate-icon {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
 @media (max-width: 680px) {
   .floating-nav {
-    bottom: 20px; top: auto; left: 50%; transform: translateX(-50%);
-    max-width: calc(100% - 40px);
-    
-    /* MODIFIED: Reduced padding and gap for mobile space optimization */
+    bottom: calc(20px + env(safe-area-inset-bottom)); 
+    top: auto; 
+    left: 50%; 
+    transform: translateX(-50%);
+    width: max-content;
+    max-width: calc(100vw - 32px);
     padding: 8px 10px; 
-    gap: 8px; 
-    
-    border-radius: 12px;
+    gap: 4px;
+    border-radius: 50px; 
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
+
+  .floating-nav::-webkit-scrollbar {
+    display: none;
+  }
+
   .floating-nav a {
-    font-size: 0.85rem; 
-    /* MODIFIED: Reduced link padding for mobile */
-    padding: 4px 6px; 
+    font-size: 0.8rem;
+    padding: 6px 8px;
   }
+
   .floating-nav a.active {
-    /* MODIFIED: Reduced active link padding to match new base link padding */
-    padding: 4px 8px;
+    padding: 6px 12px;
   }
 }

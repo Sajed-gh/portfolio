@@ -1,4 +1,3 @@
-/* styles/base.css */
 :root {
   --bg:#F5F5F7;
   --card:#FFFFFF;
@@ -8,8 +7,8 @@
   --border:rgba(0,0,0,.08);
   --shadow: 0 10px 20px rgba(0, 0, 0, .06);
   --radius:18px;
-  --gap:20px;
-  --max:1300px;
+  --gap:16px;
+  --max:1400px;
   --trans-base: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   --trans-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -51,7 +50,6 @@ h2{font-size:1.45rem;font-weight:600;margin-bottom:12px}
 h3{font-size:1.1rem;font-weight:600;margin-bottom:8px}
 p{color:var(--muted);margin-bottom:12px;line-height:1.55}
 
-/* Global Buttons */
 .btn {
     padding: 12px 24px; border-radius: 12px; border: 1px solid var(--border);
     background: transparent; font-weight: 600; cursor: pointer;
@@ -69,6 +67,7 @@ p{color:var(--muted);margin-bottom:12px;line-height:1.55}
 .btn:active { transform: translateY(0); }
 
 .btn.primary { background: var(--accent); color: white; border: 1px solid var(--accent); }
+
 .btn.primary:hover {
     box-shadow: 0 8px 20px rgba(0, 113, 227, 0.35); 
     filter: brightness(1.1);
@@ -83,6 +82,29 @@ p{color:var(--muted);margin-bottom:12px;line-height:1.55}
 
 @media(max-width:680px){
     body { padding-bottom: 100px; padding-top: 20px; }
-    .cta-buttons { width: 100%; flex-direction: column; gap: 12px; }
-    .btn { width: 100%; }
+    .cta-buttons { 
+        width: 100%; 
+        flex-direction: row; 
+        flex-wrap: wrap;
+        gap: 12px; 
+    }
+    .cta-buttons .btn:nth-child(1),
+    .cta-buttons .btn:nth-child(2) {
+        flex: 1; 
+        min-width: 0;
+        font-size: 14.5px;
+    }
+    .cta-buttons .btn:nth-child(3) {
+        width: 100%; 
+    }
+    
+    .lets-work .cta-buttons .btn:nth-child(1) {
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+    .lets-work .cta-buttons .btn:nth-child(2) {
+        padding-left: 24px;
+        padding-right: 24px;
+        white-space: nowrap;
+    }
 }

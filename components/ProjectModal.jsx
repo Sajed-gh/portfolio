@@ -41,6 +41,17 @@ export default function ProjectModal({ isOpen, project, onClose }) {
                 <h2 id="modal-title">{project.title}</h2>
 
                 <div className="video-container">
+                    {project.videoUrl && (project.videoUrl.includes('youtube') || project.videoUrl.includes('vimeo')) ? (
+                        <iframe
+                            className="video-frame"
+                            src={project.videoUrl}
+                            title="Project Video"
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                            style={{ width: '100%', height: '100%', minHeight: '300px' }}
+                        />
+                    ) : (
                         <video 
                             id="project-video" 
                             controls 
@@ -51,6 +62,7 @@ export default function ProjectModal({ isOpen, project, onClose }) {
                             src={project.videoUrl}
                             title="Project Demo Video"
                         />
+                    )}
                 </div>
                 <h3 style={{fontSize: '1rem', fontWeight: 500, marginTop: '15px'}}>Overview:</h3>
                 <p id="modal-desc">{project.desc}</p>

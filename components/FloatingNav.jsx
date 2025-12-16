@@ -16,27 +16,43 @@ const useActiveSection = (links) => {
         // Get all relevant section elements
         const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
         
-        // Define options for IntersectionObserver
-        // rootMargin: '-30% 0px -70% 0px' creates a vertical detection window 
-        // that is 30% from the top and 70% from the bottom of the viewport.
-        // This ensures a section is marked 'active' when it enters the upper part of the screen.
+        // INTERSECTION OBSERVER
+        // Center-line detection (-50% top and bottom margin). 
+        // A section activates when it crosses the middle of the screen.
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
-                // If section is currently visible within the defined rootMargin
                 if (entry.isIntersecting) {
                     setActiveId(entry.target.id);
                 }
             });
         }, { 
-            rootMargin: '-30% 0px -70% 0px', 
+            rootMargin: '-50% 0px -50% 0px', 
             threshold: 0 
         });
 
-        // Observe all sections
         sections.forEach(section => observer.observe(section));
 
-        // Cleanup function
-        return () => observer.disconnect();
+        // SCROLL LISTENER (Bottom Fallback)
+        // Forces the last section (Contact) to be active when reaching the bottom of the page.
+        // This fixes the issue where short footer sections don't trigger the Observer zone.
+        const handleScroll = () => {
+            const scrollPosition = window.innerHeight + window.scrollY;
+            const bodyHeight = document.documentElement.scrollHeight;
+
+            // If we are within 20px of the bottom
+            if (scrollPosition >= bodyHeight - 20) {
+                const lastSectionId = sectionIds[sectionIds.length - 1];
+                setActiveId(lastSectionId);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+
+        // Cleanup
+        return () => {
+            observer.disconnect();
+            window.removeEventListener('scroll', handleScroll);
+        };
     }, [sectionIds]);
 
     return activeId;
@@ -55,6 +71,9 @@ const useTheme = () => {
             if (savedTheme === 'dark') {
                 document.body.classList.add('dark-mode');
             }
+        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            setTheme('dark');
+            document.body.classList.add('dark-mode');
         }
     }, []);
 
@@ -86,6 +105,14 @@ export default function FloatingNav() {
 
     const ThemeIcon = theme === 'dark' ? FiSun : FiMoon; 
 
+    const [isAnimating, setIsAnimating] = useState(false);
+
+    const handleThemeToggle = () => {
+        setIsAnimating(true);
+        toggleTheme();
+        setTimeout(() => setIsAnimating(false), 500); // Duration matches CSS animation
+    };
+
     return (
         <nav className="floating-nav">
             {navLinks.map((link, index) => {
@@ -104,9 +131,9 @@ export default function FloatingNav() {
             
             <button 
                 id="theme-toggle" 
-                className="theme-toggle" 
+                className={`theme-toggle ${isAnimating ? 'rotate-active' : ''}`} 
                 aria-label="Toggle Dark Mode"
-                onClick={toggleTheme}
+                onClick={handleThemeToggle}
             >
                 <span className="icon">
                     <ThemeIcon size={20} /> 

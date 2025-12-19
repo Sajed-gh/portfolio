@@ -21,19 +21,44 @@
     border-color: var(--accent);
 }
 
-.project-thumb, .blog-thumb {
-    background: linear-gradient(135deg, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.04) 100%);
+.project-thumb,
+.blog-thumb {
     border-radius: 12px; 
     border: none;
     margin-bottom: 20px; 
     display: flex; align-items: center; justify-content: center;
-    font-weight: 600; color: var(--muted); font-size: 0.95rem; line-height: 1.2;
-    transition: background 0.3s ease; height: 180px;
-    overflow: hidden;
+    font-weight: 600;
+        color: transparent;
+        font-size: 0.95rem;
+        line-height: 1.2;
+        transition: background 0.3s ease, color 0.22s ease;
+        height: 180px;
+        overflow: hidden;
+        position: relative;
+        background: linear-gradient(90deg, rgba(0, 0, 0, 0.02) 0%, rgba(0, 0, 0, 0.03) 50%, rgba(0, 0, 0, 0.02) 100%);
+        background-size: 200% 100%;
+        animation: shimmer 1.2s linear infinite;
 }
 
 .dark-mode .project-thumb, .dark-mode .blog-thumb {
-    background: rgba(255,255,255,0.05);
+    background: rgba(255, 255, 255, 0.03);
+    }
+    
+    /* Reveal thumbnail content when the section becomes visible */
+    section.visible .project-thumb,
+    section.visible .blog-thumb {
+        animation: none;
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0.02) 0%, rgba(0, 0, 0, 0.04) 100%);
+        color: var(--muted);
+    }
+    
+    @media (prefers-reduced-motion: reduce) {
+    
+        .project-thumb,
+        .blog-thumb {
+            animation: none;
+            background-size: auto;
+        }
 }
 
 .tags { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
@@ -58,6 +83,36 @@
     font-size: 1.25rem; font-weight: 700; margin-bottom: 8px; line-height: 1.3; 
 }
 
+.project-card-header {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.role-pill {
+    background: rgba(0, 0, 0, 0.04);
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--muted);
+}
+
+.metric-badge {
+    background: var(--accent);
+    color: var(--card);
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.project-meta {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-bottom: 8px;
+}
 .blog-card p, .project-card p { 
     color: var(--muted); font-size: 0.95rem; margin-bottom: 16px; flex-grow: 1; line-height: 1.6;
     display: -webkit-box;

@@ -8,6 +8,7 @@ import '../styles/components/Cards.css';
 import '../styles/components/Carousel.css';
 import '../styles/components/Modal.css';
 import '../styles/components/Footer.css';
+import '../styles/components/animations.css';
 
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />

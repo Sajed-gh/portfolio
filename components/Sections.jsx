@@ -1,7 +1,13 @@
 // components/Sections.jsx
 
 import { useEffect, useRef, useState } from 'react'; 
-import { contactInfo, projectsData, blogPosts } from '../data/portfolioData';
+import { contactInfo } from '../data/contactInfo';
+import { projectsData } from '../data/projectsData';
+import { blogPosts } from '../data/blogPosts';
+import { HERO_ROLES } from '../data/heroData';
+import { serviceData } from '../data/servicesData';
+import { valuePropData } from '../data/valuePropData';
+import { processData } from '../data/processData';
 import { 
     FiCpu, FiMessageSquare, FiEye, FiCode,
     FiZap, FiTarget, FiUsers, FiRefreshCw,
@@ -16,27 +22,6 @@ const IconMap = {
     FiZap, FiTarget, FiUsers, FiRefreshCw,
     FiSearch, FiTrello, FiUploadCloud, FiActivity,
 };
-
-const serviceData = [
-    { title: "AI Agent Development", icon: "FiCpu", desc: "Building goal-oriented, autonomous systems for task execution and decision-making." },
-    { title: "RAG & LLM Engineering", icon: "FiMessageSquare", desc: "Creating robust, context-aware LLM applications powered by retrieval-augmented generation." },
-    { title: "Computer Vision & OCR", icon: "FiEye", desc: "Implementing solutions for image recognition, object detection, and document data extraction." },
-    { title: "API Integration", icon: "FiCode", desc: "Connecting modern AI systems with existing software architecture and third-party services." },
-];
-
-const valuePropData = [
-    { title: "Engineering Mindset", icon: "FiZap", desc: "Focus on performance, scalability, and maintainability from day one." },
-    { title: "Impact-Driven Solutions", icon: "FiTarget", desc: "Prioritizing features that deliver measurable business value and ROI." },
-    { title: "Cross-Functional Collaboration", icon: "FiUsers", desc: "Seamless integration with your existing product and engineering teams." },
-    { title: "Continuous AI Innovation", icon: "FiRefreshCw", desc: "Staying current with the latest ML research to future-proof your product." },
-];
-
-const processData = [
-    { title: "1. Problem Definition & Design", icon: "FiSearch", desc: "Scoping requirements and designing the AI system architecture." },
-    { title: "2. Prototyping & Iteration (MVP)", icon: "FiTrello", desc: "Rapid development and testing of a Minimum Viable Product." },
-    { title: "3. Deployment & Integration", icon: "FiUploadCloud", desc: "Seamlessly pushing the solution into your live production environment." },
-    { title: "4. Monitoring & Refinement", icon: "FiActivity", desc: "Tracking performance and making data-driven improvements post-launch." },
-];
 
 const useSectionReveal = () => {
     const sectionRefs = useRef([]);
@@ -67,10 +52,9 @@ const useSectionReveal = () => {
     return setSectionRef;
 };
 
+// HERO roles and section data are now imported from data/*.js
 
 const HeroSection = ({ setSectionRef, cvLink }) => {
-    
-    const roles = ["AIEngineer", "LLM Systems Architect", "Computer Vision Specialist"];
     
     const [currentText, setCurrentText] = useState(""); 
     const [roleIndex, setRoleIndex] = useState(0);
@@ -79,7 +63,7 @@ const HeroSection = ({ setSectionRef, cvLink }) => {
     
     useEffect(() => {
         let timer;
-        const currentRole = roles[roleIndex % roles.length];
+        const currentRole = HERO_ROLES[roleIndex % HERO_ROLES.length];
         
         const typeSpeed = 50 + Math.random() * 50; 
         const deleteSpeed = 40;
@@ -110,7 +94,7 @@ const HeroSection = ({ setSectionRef, cvLink }) => {
         }
 
         return () => clearTimeout(timer);
-    }, [charIndex, isDeleting, roleIndex, roles]);
+    }, [charIndex, isDeleting, roleIndex]);
 
     return (
         <section className="hero" id="hero" ref={setSectionRef}>
@@ -125,7 +109,7 @@ const HeroSection = ({ setSectionRef, cvLink }) => {
                 />
             </div>
             <div>
-                <h1 className="hero-title">Mohamed Sajed Gharsalli</h1>
+                <h1 className="hero-title u-fade-in">Mohamed Sajed Gharsalli</h1>
                 
                 <p className="hero-subtitle">
                     {currentText}
@@ -150,9 +134,9 @@ const HeroSection = ({ setSectionRef, cvLink }) => {
                 </div>
                 
                 <div className="cta-buttons">
-                    <a href={cvLink} download className="btn">Get My CV</a>
-                    <a href={`mailto:${contactInfo.email}`} className="btn">Email Me</a>
-                    <a href={contactInfo.calendly} target="_blank" rel="noopener noreferrer" className="btn primary">Schedule Meeting</a>
+                    <a href={cvLink} download className="btn" aria-label="Download my CV">Get My CV</a>
+                    <a href={`mailto:${contactInfo.email}`} className="btn" aria-label={`Email ${contactInfo.email}`}>Email Me</a>
+                    <a href={contactInfo.calendly} target="_blank" rel="noopener noreferrer" className="btn primary" aria-label="Schedule a meeting">Schedule Meeting</a>
                 </div>
             </div>
         </section>
@@ -161,12 +145,12 @@ const HeroSection = ({ setSectionRef, cvLink }) => {
 
 const ServiceSection = ({ setSectionRef }) => (
     <section className="services" id="services" ref={setSectionRef}>
-        <h2>Services</h2>
+        <h2 className="u-fade-in">Services</h2>
         <div className="block-list services-grid"> 
-            {serviceData.map((item, index) => {
+            {serviceData.map((item) => {
                 const IconComponent = IconMap[item.icon];
                 return (
-                    <div key={index} className="service-card matrix-card" tabIndex="0"> 
+                    <div key={item.title} className="service-card matrix-card" tabIndex="0"> 
                         <div className="service-header">
                             {IconComponent && (
                                 <div className="service-icon-wrapper">
@@ -185,12 +169,12 @@ const ServiceSection = ({ setSectionRef }) => (
 
 const ValuePropSection = ({ setSectionRef }) => (
     <section className="value-prop" ref={setSectionRef}>
-        <h2>Why Partner With Me?</h2>
+        <h2 className="u-fade-in">Why Partner With Me?</h2>
         <div className="block-list value-list">
-            {valuePropData.map((item, index) => {
+            {valuePropData.map((item) => {
                 const IconComponent = IconMap[item.icon];
                 return (
-                    <div key={index} className="service-card list-card" tabIndex="0"> 
+                    <div key={item.title} className="service-card list-card" tabIndex="0"> 
                         <div className="service-header">
                             {IconComponent && (
                                 <div className="service-icon-wrapper">
@@ -209,12 +193,12 @@ const ValuePropSection = ({ setSectionRef }) => (
 
 const ProcessSection = ({ setSectionRef }) => (
     <section className="process" ref={setSectionRef}>
-        <h2>My Approach</h2>
+        <h2 className="u-fade-in">My Approach</h2>
         <div className="block-list process-timeline">
-            {processData.map((item, index) => {
+            {processData.map((item) => {
                 const IconComponent = IconMap[item.icon];
                 return (
-                    <div key={index} className="service-card timeline-card" tabIndex="0"> 
+                    <div key={item.title} className="service-card timeline-card" tabIndex="0"> 
                         <div className="service-header">
                             {IconComponent && (
                                 <div className="service-icon-wrapper">
@@ -241,9 +225,10 @@ const ProjectsSection = ({ setSectionRef, onProjectClick }) => {
         <div 
             className="project-card" 
             data-project={project.id} 
-            onClick={() => onProjectClick(project.id)}
+            onClick={(e) => onProjectClick(project.id, e.currentTarget)}
             role="button"
             tabIndex="0"
+            aria-label={`Open project ${project.title}`}
         >
             <div className="project-thumb">{project.thumbText}</div>
             <h3>{project.title}</h3>
@@ -258,7 +243,7 @@ const ProjectsSection = ({ setSectionRef, onProjectClick }) => {
 
     return (
         <section className="projects" id="projects" ref={setSectionRef}>
-            <h2>Latest Work</h2>
+            <h2 className="u-fade-in">Latest Work</h2>
             <Carousel
                 items={projects}
                 renderItem={renderProjectCard}
@@ -276,7 +261,7 @@ const ProjectsSection = ({ setSectionRef, onProjectClick }) => {
 
 const BlogSection = ({ setSectionRef }) => {
     const renderBlogCard = (post) => (
-        <a href="#" className="blog-card">
+        <a href="#" onClick={(e)=> e.preventDefault()} className="blog-card">
             <div className="blog-thumb">{post.thumbText}</div>
             <h3>{post.title}</h3>
             <p>{post.summary}</p>
@@ -286,7 +271,7 @@ const BlogSection = ({ setSectionRef }) => {
 
     return (
         <section className="blogs" id="blogs" ref={setSectionRef}>
-            <h2>From the Blog</h2>
+            <h2 className="u-fade-in">From the Blog</h2>
             <Carousel
                 items={blogPosts}
                 renderItem={renderBlogCard}
@@ -304,7 +289,7 @@ const BlogSection = ({ setSectionRef }) => {
 
 const PresenceSection = ({ setSectionRef, links }) => (
     <section className="presence" ref={setSectionRef}>
-        <h2>Online Presence</h2>
+        <h2 className="u-fade-in">Online Presence</h2>
         <p>Connect with me on my platforms.</p>
         <div className="presence-links">
             
@@ -330,11 +315,11 @@ const PresenceSection = ({ setSectionRef, links }) => (
 
 const LetsWorkSection = ({ setSectionRef, links }) => (
     <section className="lets-work" id="contact" ref={setSectionRef}>
-        <h2>Let's Work Together</h2>
+        <h2 className="u-fade-in">Let's Work Together</h2>
         <p>I'm available for freelance projects and full-time roles. Reach out!</p>
         <div className="cta-buttons">
-            <a href={`mailto:${links.email}`} className="btn">Email Me</a>
-            <a href={links.calendly} target="_blank" rel="noopener noreferrer" className="btn primary">Schedule Meeting</a>
+            <a href={`mailto:${links.email}`} className="btn" aria-label={`Email ${links.email}`}>Email Me</a>
+            <a href={links.calendly} target="_blank" rel="noopener noreferrer" className="btn primary" aria-label="Schedule a meeting">Schedule Meeting</a>
         </div>
     </section>
 );

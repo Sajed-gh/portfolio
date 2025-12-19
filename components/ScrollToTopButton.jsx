@@ -1,5 +1,5 @@
 // components/ScrollToTopButton.jsx (Updated)
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { FiArrowUp } from 'react-icons/fi';
 
 export default function ScrollToTopButton() {
@@ -7,29 +7,29 @@ export default function ScrollToTopButton() {
     // NEW: State to track scroll progress percentage
     const [scrollProgress, setScrollProgress] = useState(0); 
 
+    const tickingRef = useRef(false);
+
     useEffect(() => {
-        const toggleVisibility = () => {
-            // Calculate scroll progress (0 to 100)
-            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled = window.scrollY;
-            // Ensure progress is not NaN and is between 0 and 100
-            const progress = scrollHeight > 0 ? (scrolled / scrollHeight) * 100 : 0;
-            
-            setScrollProgress(progress);
-            
-            // Toggle visibility based on scroll position
-            if (scrolled > 400) {
-                setIsVisible(true);
-            } else {
-                setIsVisible(false);
-            }
+        const handleScroll = () => {
+            if (tickingRef.current) return;
+            tickingRef.current = true;
+            requestAnimationFrame(() => {
+                const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = window.scrollY;
+                const progressRaw = scrollHeight > 0 ? (scrolled / scrollHeight) * 100 : 0;
+                const progress = Math.min(100, Math.max(0, progressRaw));
+
+                setScrollProgress(progress);
+                setIsVisible(scrolled > 400);
+                tickingRef.current = false;
+            });
         };
 
-        window.addEventListener('scroll', toggleVisibility);
+        window.addEventListener('scroll', handleScroll, { passive: true });
         // Initialize the progress on mount
-        toggleVisibility(); 
-        
-        return () => window.removeEventListener('scroll', toggleVisibility);
+        handleScroll();
+
+        return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
     const scrollToTop = () => {

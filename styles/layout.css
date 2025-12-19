@@ -51,31 +51,7 @@ section.visible{
 .presence { grid-column: 1 / 7; }
 .lets-work { grid-column: 7 / 13; }
 
-.global-loader {
-    position: fixed; inset: 0; background: var(--bg); z-index: 9999;
-    display: flex; justify-content: center; align-items: center;
-    transition: opacity 0.6s ease, visibility 0.6s ease;
-}
-
-.global-loader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
-
-.modern-loader {
-    display: flex; gap: 8px;
-}
-
-.loader-dot {
-    width: 12px; height: 12px; border-radius: 50%;
-    background: var(--accent);
-    animation: bounce 0.5s cubic-bezier(0.19, 0.57, 0.3, 0.98) infinite alternate;
-}
-
-.loader-dot:nth-child(2) { animation-delay: 0.1s; opacity: 0.8; }
-.loader-dot:nth-child(3) { animation-delay: 0.2s; opacity: 0.6; }
-
-@keyframes bounce {
-    from { transform: translateY(0); }
-    to { transform: translateY(-12px); }
-}
+/* initial splash loader removed — styles cleaned up */
 
 @media(max-width:900px) {
   .services, .value-prop, .process, .presence, .lets-work, .projects, .blogs {
@@ -87,13 +63,25 @@ section.visible{
 }
 
 .lets-work h2 {
-    background: linear-gradient(135deg, var(--text) 0%, var(--accent) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    color: transparent;
-    font-weight: 800;
-    display: inline-block;
+    /* Reset special-case styling so section headings stay visually consistent */
+      background: none;
+      -webkit-background-clip: initial;
+      -webkit-text-fill-color: initial;
+      background-clip: initial;
+      color: var(--text);
+      font-weight: 600;
+      display: block;
+    }
+    
+    /* Unified section heading rules: enforce consistent position, font weight and full-width title */
+    section h2 {
+      display: block;
+      width: 100%;
+      font-weight: 600;
+      /* matches base h2 */
+      font-size: 1.45rem;
+      margin-bottom: 12px;
+      text-align: left;
 }
 
 .presence-links {

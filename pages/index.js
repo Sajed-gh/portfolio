@@ -6,30 +6,21 @@ import ProjectModal from '../components/ProjectModal';
 import ScrollToTopButton from '../components/ScrollToTopButton';
 
 export async function getStaticProps() {
-    const { projectsData } = await import('../data/portfolioData');
-    return {
-        props: {
-            projects: projectsData,
-        },
-    };
+    const { projectsData } = await import('../data/projectsData');
+    return { props: { projects: projectsData } };
 }
 
 export default function Home({ projects }) {
-    const [isLoading, setIsLoading] = useState(true);
-
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setIsLoading(false);
-        }, 800); // Faster, snappier load
-
-        return () => clearTimeout(timer);
-    }, []);
-    // ---------------------------------
+    // No initial splash loader — render immediately
 
     const [modalOpen, setModalOpen] = useState(false);
     const [selectedProjectId, setSelectedProjectId] = useState(null);
 
-    const handleProjectClick = (id) => {
+    const [returnFocusTo, setReturnFocusTo] = useState(null);
+
+    const handleProjectClick = (id, originatingElement) => {
+        // capture the originating element so we can return focus when modal closes
+        setReturnFocusTo(originatingElement || document.activeElement);
         setSelectedProjectId(id);
         setModalOpen(true);
     };
@@ -67,21 +58,18 @@ export default function Home({ projects }) {
                 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
             </Head>
 
-            <div className={`global-loader ${!isLoading ? 'hidden' : ''}`}>
-                <div className="modern-loader">
-                    <div className="loader-dot"></div>
-                    <div className="loader-dot"></div>
-                    <div className="loader-dot"></div>
-                </div>
-            </div>
+            {/* loader removed to avoid initial splash — page renders immediately */}
 
             <FloatingNav />
             <PortfolioSections onProjectClick={handleProjectClick} />
-            <ProjectModal 
-                isOpen={modalOpen} 
-                project={selectedProject} 
-                onClose={handleCloseModal} 
-            />
+            {modalOpen && selectedProject && (
+                <ProjectModal 
+                    isOpen={modalOpen} 
+                    project={selectedProject} 
+                    onClose={handleCloseModal}
+                    returnFocusTo={returnFocusTo}
+                />
+            )}
             <ScrollToTopButton />
         </>
     );

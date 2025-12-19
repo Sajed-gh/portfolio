@@ -1,0 +1,39 @@
+/* styles/components/animations.css */
+
+/* Generic fade-in helper used by headings and inline elements */
+.u-fade-in {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* When the parent section becomes visible, reveal these items */
+section.visible .u-fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Simple typing cursor used in the hero */
+.typing-cursor {
+  display: inline-block;
+  width: 0.6ch;
+  margin-left: 6px;
+  vertical-align: middle;
+  animation: typing-blink 1s steps(1,end) infinite;
+}
+
+@keyframes typing-blink {
+  50% { opacity: 0; }
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .u-fade-in,
+  .typing-cursor,
+  .scroll-progress-svg,
+  .scroll-arrow-icon,
+  .scroll-top-btn {
+    transition: none !important;
+    animation: none !important;
+  }
+}

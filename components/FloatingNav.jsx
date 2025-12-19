@@ -97,10 +97,11 @@ export default function FloatingNav() {
     // Use the new hook to track the active section
     const activeSection = useActiveSection(navLinks); 
 
-    const handleScroll = (e, targetId) => {
+    const handleLinkClick = (e, targetId) => {
         e.preventDefault();
-        // Uses smooth scroll
-        document.getElementById(targetId).scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Guard existence before scrolling
+        const el = document.getElementById(targetId);
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     };
 
     const ThemeIcon = theme === 'dark' ? FiSun : FiMoon; 
@@ -115,13 +116,13 @@ export default function FloatingNav() {
 
     return (
         <nav className="floating-nav">
-            {navLinks.map((link, index) => {
+            {navLinks.map((link) => {
                 const id = link.substring(1);
                 return (
                     <a 
-                        key={index}
+                        key={id}
                         href={link} 
-                        onClick={(e) => handleScroll(e, id)}
+                        onClick={(e) => handleLinkClick(e, id)}
                         className={activeSection === id ? 'active' : ''} 
                     >
                         {id.charAt(0).toUpperCase() + id.slice(1)}

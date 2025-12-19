@@ -17,12 +17,13 @@ export default function Carousel({
 
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isTransitioning, setIsTransitioning] = useState(false);
-    const [touchStart, setTouchStart] = useState(null);
-    const [touchEnd, setTouchEnd] = useState(null);
+    const touchStartRef = useRef(null);
+    const touchEndRef = useRef(null);
     const [displayCount, setDisplayCount] = useState(
         typeof visibleCount === 'number' ? visibleCount : 3
     );
     const carouselRef = useRef(null);
+    const trackRef = useRef(null);
 
     useEffect(() => {
         const handleResize = () => {
@@ -66,26 +67,33 @@ export default function Carousel({
         setCurrentIndex(index);
     };
 
+    // Listen for actual CSS transition end on the track to reliably update state
     useEffect(() => {
-        const timer = setTimeout(() => {
-            setIsTransitioning(false);
-        }, animationSpeed);
-
-        return () => clearTimeout(timer);
-    }, [currentIndex, animationSpeed]);
+        const trackEl = trackRef.current;
+        if (!trackEl) return;
+        const onTransitionEnd = (e) => {
+            if (e.propertyName === 'transform') {
+                setIsTransitioning(false);
+            }
+        };
+        trackEl.addEventListener('transitionend', onTransitionEnd);
+        return () => trackEl.removeEventListener('transitionend', onTransitionEnd);
+    }, [animationSpeed]);
 
     // Touch handling
     const handleTouchStart = (e) => {
-        setTouchStart(e.targetTouches[0].clientX);
+        touchStartRef.current = e.targetTouches[0].clientX;
     };
 
     const handleTouchEnd = (e) => {
-        setTouchEnd(e.changedTouches[0].clientX);
+        touchEndRef.current = e.changedTouches[0].clientX;
         handleSwipe();
     };
 
     const handleSwipe = () => {
-        if (!touchStart || !touchEnd) return;
+        const touchStart = touchStartRef.current;
+        const touchEnd = touchEndRef.current;
+        if (touchStart == null || touchEnd == null) return;
         const distance = touchStart - touchEnd;
         const isLeftSwipe = distance > 50;
         const isRightSwipe = distance < -50;
@@ -96,8 +104,8 @@ export default function Carousel({
             goToPrev();
         }
 
-        setTouchStart(null);
-        setTouchEnd(null);
+        touchStartRef.current = null;
+        touchEndRef.current = null;
     };
 
     // Keyboard navigation
@@ -115,7 +123,7 @@ export default function Carousel({
             carouselElement.addEventListener('keydown', handleKeyPress);
             return () => carouselElement.removeEventListener('keydown', handleKeyPress);
         }
-    }, []);
+    }, [goToNext, goToPrev]);
 
     const offset = -currentIndex * (100 / displayCount);
 
@@ -160,6 +168,7 @@ export default function Carousel({
             >
                 <div
                     className="carousel-track"
+                    ref={trackRef}
                     style={{
                         transform: `translateX(${offset}%)`,
                         transition: isTransitioning ? `transform ${animationSpeed}ms ease-out` : 'none'
@@ -167,7 +176,7 @@ export default function Carousel({
                 >
                     {items.map((item, index) => (
                         <div
-                            key={index}
+                            key={item.id ?? item.key ?? index}
                             className="carousel-slide"
                             style={{
                                 flex: `0 0 ${100 / displayCount}%`

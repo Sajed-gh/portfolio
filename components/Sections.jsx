@@ -232,6 +232,11 @@ const ProjectsSection = ({ setSectionRef, onProjectClick }) => {
         >
             <div className="project-thumb">{project.thumbText}</div>
             <h3>{project.title}</h3>
+            {project.keyResults && (
+                <div className="project-results-preview">
+                    {project.keyResults}
+                </div>
+            )}
             <div className="tags">
                 {project.tags.slice(0, 3).map(tag => (
                     <span key={tag} className="tag">{tag}</span>

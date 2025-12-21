@@ -23,6 +23,7 @@ export const projectsData = {
         role: "Lead Engineer",
         timeframe: "6 months",
         primaryMetric: "Saved ~8 hrs/week",
+        keyResults: "Reduced the accounting team's document processing time by approximately 8 hours per week.",
         keyDecisions: [
             "Chose custom TensorFlow models for domain-specific accuracy improvements",
             "Implemented pragmatic human-in-the-loop review to reduce false positives"

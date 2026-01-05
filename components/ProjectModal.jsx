@@ -6,9 +6,6 @@ export default function ProjectModal({ isOpen, project, onClose, returnFocusTo }
     const contentRef = useRef(null);
     const prevFocusRef = useRef(null);
 
-    // Short-circuit: avoid mounting or running modal side-effects when closed or no project
-    if (!isOpen || !project) return null;
-
     const handleKeyDown = useCallback((e) => {
         if (e.key === "Escape") {
             onClose();
@@ -40,6 +37,8 @@ export default function ProjectModal({ isOpen, project, onClose, returnFocusTo }
     }, [onClose]);
 
     useEffect(() => {
+        if (!isOpen || !project) return;
+
         // Save previously focused element for restoring focus later
         prevFocusRef.current = returnFocusTo || document.activeElement;
 
@@ -68,7 +67,10 @@ export default function ProjectModal({ isOpen, project, onClose, returnFocusTo }
                 // ignore
             }
         };
-    }, [handleKeyDown, returnFocusTo]);
+    }, [handleKeyDown, returnFocusTo, isOpen, project]);
+
+    // Short-circuit: avoid mounting or running modal side-effects when closed or no project
+    if (!isOpen || !project) return null;
 
 
     return (

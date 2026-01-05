@@ -85,14 +85,14 @@ const useTheme = () => {
 };
 
 
+// Define all navigation links (IDs must match section IDs in Sections.jsx)
+const NAV_LINKS = ['#hero', '#services', '#projects', '#contact']; 
+
 export default function FloatingNav() {
     const [theme, toggleTheme] = useTheme();
     
-    // Define all navigation links (IDs must match section IDs in Sections.jsx)
-    const navLinks = ['#hero', '#services', '#projects', '#contact']; 
-    
     // Use the new hook to track the active section
-    const activeSection = useActiveSection(navLinks); 
+    const activeSection = useActiveSection(NAV_LINKS); 
 
     const handleLinkClick = (e, targetId) => {
         e.preventDefault();
@@ -113,7 +113,7 @@ export default function FloatingNav() {
 
     return (
         <nav className="floating-nav">
-            {navLinks.map((link) => {
+            {NAV_LINKS.map((link) => {
                 const id = link.substring(1);
                 return (
                     <a 

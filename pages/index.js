@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo } from 'react';
 import PortfolioSections from '../components/Sections';
 import FloatingNav from '../components/FloatingNav';
 import ProjectModal from '../components/ProjectModal';
@@ -55,7 +55,6 @@ export default function Home({ projects }) {
                 <meta name="twitter:title" content="Mohamed Sajed Gharsalli | Portfolio" />
                 <meta name="twitter:description" content="AI Engineer & Full Stack Developer. View my projects and writing." />
                 
-                <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;1,400&family=Manrope:wght@700;800&family=Outfit:wght@700;800&family=Plus+Jakarta+Sans:wght@600;700&display=swap" rel="stylesheet"/>
             </Head>
 
             {/* loader removed to avoid initial splash — page renders immediately */}

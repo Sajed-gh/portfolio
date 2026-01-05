@@ -54,7 +54,7 @@ const useSectionReveal = () => {
 
 // HERO roles and section data are now imported from data/*.js
 
-const HeroSection = ({ setSectionRef, cvLink }) => {
+const HeroSection = ({ setSectionRef }) => {
     
     const [currentText, setCurrentText] = useState(""); 
     const [roleIndex, setRoleIndex] = useState(0);
@@ -345,7 +345,7 @@ export default function PortfolioSections({ onProjectClick }) {
     
     return (
         <main>
-            <HeroSection setSectionRef={setSectionRef} cvLink={contactInfo.cvUrl} />
+            <HeroSection setSectionRef={setSectionRef} />
             <ServiceSection setSectionRef={setSectionRef} />
             <ValuePropSection setSectionRef={setSectionRef} />
             <ProcessSection setSectionRef={setSectionRef} />

@@ -411,4 +411,77 @@
     .services-grid, .value-list, .process-timeline {
         gap: 12px;
     }
+
+    /* Shared Mobile Style for both card types */
+    .list-card, .matrix-card {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        padding: 20px;
+        gap: 8px;
+        transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+        
+        /* Unified Matrix-Card Look */
+        background: rgba(0, 0, 0, 0.015);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        border-radius: 16px;
+    }
+
+    .dark-mode .list-card, 
+    .dark-mode .matrix-card {
+        background: rgba(255, 255, 255, 0.03);
+        border-color: rgba(255, 255, 255, 0.08);
+    }
+
+    /* Left-to-right animation on hover for both */
+    .list-card:hover, .matrix-card:hover {
+        transform: translateX(8px) translateY(0) !important;
+        box-shadow: var(--shadow-md);
+        border-color: var(--accent);
+    }
+
+    .list-card .service-header, 
+    .matrix-card .service-header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 4px;
+    }
+
+    .list-card .service-icon-wrapper,
+    .matrix-card .service-icon-wrapper {
+        width: 42px;
+        height: 42px;
+        margin-right: 14px;
+        margin-bottom: 0;
+        flex-shrink: 0;
+    }
+
+    .list-card .service-icon-wrapper svg,
+    .matrix-card .service-icon-wrapper svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .list-card .service-title,
+    .matrix-card .service-title {
+        font-size: 1.05rem;
+        margin: 0;
+        line-height: 1.3;
+        align-self: center; /* Reset desktop end alignment */
+        grid-column: auto;  /* Reset desktop grid placement */
+    }
+
+    .list-card .service-desc,
+    .matrix-card .service-desc {
+        margin-top: 0;
+        width: 100%;
+        font-size: 0.9rem;
+        text-align: left;
+        line-height: 1.5;
+    }
 }

@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 
 
@@ -46,22 +46,22 @@ export default function Carousel({
         handleResize();
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
-    }, [visibleCount]);
+    }, [visibleCount, items.length]);
 
     const itemCount = items.length;
     const totalSlides = itemCount;
 
-    const goToNext = () => {
+    const goToNext = useCallback(() => {
         if (isTransitioning) return;
         setIsTransitioning(true);
         setCurrentIndex((prev) => (prev + 1) % totalSlides);
-    };
+    }, [isTransitioning, totalSlides]);
 
-    const goToPrev = () => {
+    const goToPrev = useCallback(() => {
         if (isTransitioning) return;
         setIsTransitioning(true);
         setCurrentIndex((prev) => (prev - 1 + totalSlides) % totalSlides);
-    };
+    }, [isTransitioning, totalSlides]);
 
     const goToSlide = (index) => {
         if (isTransitioning || index === currentIndex) return;

@@ -122,7 +122,7 @@ const HeroSection = ({ setSectionRef, cvLink }) => {
                 
                 <div className="cta-buttons">
                     <a href={contactInfo.calendly} target="_blank" rel="noopener noreferrer" className="btn primary" aria-label="Book a Call">Book a Call</a>
-                    <a href="#projects" className="btn" aria-label="View Selected Work">View Featured Work</a>
+                    <a href="#projects" className="btn" aria-label="View Selected Work">Featured Work</a>
                 </div>
             </div>
         </section>

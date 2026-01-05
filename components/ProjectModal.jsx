@@ -1,4 +1,5 @@
 import { useEffect, useCallback, useRef } from 'react';
+import { FiX } from 'react-icons/fi';
 
 export default function ProjectModal({ isOpen, project, onClose, returnFocusTo }) {
     const overlayRef = useRef(null);
@@ -75,7 +76,9 @@ export default function ProjectModal({ isOpen, project, onClose, returnFocusTo }
             if (e.target === overlayRef.current) onClose();
         }} role="dialog" aria-modal="true" aria-labelledby="modal-title">
             <div className="modal-content" ref={contentRef}>
-                <button id="close-modal" aria-label="Close Modal" onClick={onClose}>×</button>
+                <button id="close-modal" aria-label="Close Modal" onClick={onClose}>
+                    <FiX size={24} />
+                </button>
                 <h2 id="modal-title">{project.title}</h2>
 
                 {/* header stats removed: role, timeframe, and metric display intentionally omitted */}
@@ -99,6 +102,7 @@ export default function ProjectModal({ isOpen, project, onClose, returnFocusTo }
                             muted 
                             playsInline
                             src={project.videoUrl}
+                            poster={project.imageThumb}
                             title="Project Demo Video"
                         />
                     )}

@@ -1,8 +1,24 @@
 export const serviceData = [
-    { title: "AI Agent Development", icon: "FiCpu", desc: "Building goal-oriented, autonomous systems for task execution and decision-making." },
-    { title: "RAG & LLM Engineering", icon: "FiMessageSquare", desc: "Creating robust, context-aware LLM applications powered by retrieval-augmented generation." },
-    { title: "Computer Vision & OCR", icon: "FiEye", desc: "Implementing solutions for image recognition, object detection, and document data extraction." },
-    { title: "API Integration", icon: "FiCode", desc: "Connecting modern AI systems with existing software architecture and third-party services." },
+    { 
+        title: "Agentic systems", 
+        icon: "FiCpu", 
+        desc: "Designing autonomous systems that don't just chat, but use tools and logic to execute complex, multi-step workflows." 
+    },
+    { 
+        title: "Contextual Intelligence", 
+        icon: "FiMessageSquare", 
+        desc: "Moving beyond basic RAG to build context-aware systems that synthesize high-fidelity information with minimal hallucination." 
+    },
+    { 
+        title: "Visual Intelligence", 
+        icon: "FiEye", 
+        desc: "Building real-time object tracking, spatial awareness, and human-computer interaction through visual data." 
+    },
+    { 
+        title: "Production AI Engineering", 
+        icon: "FiCode", 
+        desc: "Turning stochastic AI outputs into stable, high-performance features through rigorous logic and observability." 
+    },
 ];
 
 export default serviceData;

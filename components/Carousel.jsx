@@ -27,18 +27,20 @@ export default function Carousel({
 
     useEffect(() => {
         const handleResize = () => {
+            let count;
             if (typeof visibleCount === 'object') {
                 const width = window.innerWidth;
                 if (width < 640) {
-                    setDisplayCount(visibleCount.mobile || 1);
+                    count = visibleCount.mobile || 1;
                 } else if (width < 1024) {
-                    setDisplayCount(visibleCount.tablet || 2);
+                    count = visibleCount.tablet || 2;
                 } else {
-                    setDisplayCount(visibleCount.desktop || 3);
+                    count = visibleCount.desktop || 3;
                 }
             } else {
-                setDisplayCount(visibleCount);
+                count = visibleCount;
             }
+            setDisplayCount(Math.min(count, items.length));
         };
 
         handleResize();

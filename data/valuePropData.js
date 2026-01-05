@@ -1,8 +1,7 @@
 export const valuePropData = [
-    { title: "Engineering Mindset", icon: "FiZap", desc: "Focus on performance, scalability, and maintainability from day one." },
-    { title: "Impact-Driven Solutions", icon: "FiTarget", desc: "Prioritizing features that deliver measurable business value and ROI." },
-    { title: "Cross-Functional Collaboration", icon: "FiUsers", desc: "Seamless integration with your existing product and engineering teams." },
-    { title: "Continuous AI Innovation", icon: "FiRefreshCw", desc: "Staying current with the latest ML research to future-proof your product." },
+    { title: "Production-First", icon: "FiZap", desc: "A model is a liability until it’s deployed. I build with latency, cost, and maintainability in mind." },
+    { title: "Pragmatism Over Hype", icon: "FiTarget", desc: "Choosing the right tool for the job, whether a massive LLM or a simple heuristic, to maximize ROI and minimize cost." },
+    { title: "Bridging Two Worlds", icon: "FiUsers", desc: "I speak both 'Model Weights' and 'Product Requirements' translating technical constraints into business." },
+    { title: "Adaptive Engineering", icon: "FiRefreshCw", desc: "The AI landscape changes weekly. I stay on the bleeding edge so the stack doesn't become a legacy by next quarter." },
 ];
-
 export default valuePropData;

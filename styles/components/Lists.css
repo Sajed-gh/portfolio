@@ -71,6 +71,7 @@
 }
 
 .service-title {
+    font-family: 'Plus Jakarta Sans', sans-serif;
     font-weight: 700; 
     color: var(--text);
     margin: 0; 
@@ -99,7 +100,7 @@
 .services-grid {
     display: grid; 
     grid-template-columns: repeat(2, 1fr); 
-    gap: 10px;
+    gap: var(--gap);
 }
 
 .matrix-card {
@@ -156,9 +157,9 @@
 
 .matrix-card:hover {
     transform: translateY(-8px);
-    background: rgba(255, 255, 255, 0.06);
+    background: rgba(var(--bg-rgb), 0.06);
     border-color: var(--accent);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-md);
 }
 
 .matrix-card:hover .service-icon-wrapper {
@@ -182,10 +183,10 @@
     gap: 16px;
     align-items: center;
     padding: 20px;
-    background: rgba(0, 0, 0, 0.015);
+    background: rgba(var(--accent-rgb), 0.03);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border);
     transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
@@ -231,16 +232,16 @@
 
 .list-card:hover {
     transform: translateX(6px);
-    background: rgba(255, 255, 255, 0.06);
+    background: rgba(var(--accent-rgb), 0.06);
     border-color: var(--accent);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-md);
 }
 
 .list-card:hover .service-icon-wrapper {
     background: var(--accent);
     color: white;
     transform: scale(1.1);
-    box-shadow: 0 0 15px rgba(0, 113, 227, 0.4);
+    box-shadow: 0 0 15px rgba(var(--accent-rgb), 0.4);
 }
 
 .process-timeline {

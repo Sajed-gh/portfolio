@@ -88,9 +88,10 @@ const HeroSection = ({ setSectionRef, cvLink }) => {
             }, pauseEnd);
 
         } else if (isDeleting && charIndex === 0) {
-            setIsDeleting(false);
-            setRoleIndex(prev => prev + 1);
-            timer = setTimeout(() => {}, pauseStart); 
+            timer = setTimeout(() => {
+                setIsDeleting(false);
+                setRoleIndex(prev => prev + 1);
+            }, pauseStart); 
         }
 
         return () => clearTimeout(timer);
@@ -101,7 +102,7 @@ const HeroSection = ({ setSectionRef, cvLink }) => {
             <div className="hero-avatar-wrapper">
                 <Image 
                     src="/assets/images/hero_img.jpg" 
-                    alt="Professional Portrait of Sajed" 
+                    alt="Mohamed Sajed Gharsalli - AI Engineer" 
                     className="hero-avatar" 
                     width={180} 
                     height={180} 
@@ -109,7 +110,7 @@ const HeroSection = ({ setSectionRef, cvLink }) => {
                 />
             </div>
             <div>
-                <h1 className="hero-title u-fade-in">Mohamed Sajed Gharsalli</h1>
+                <h1 className="hero-name u-fade-in">Mohamed Sajed Gharsalli</h1>
                 
                 <p className="hero-subtitle">
                     {currentText}
@@ -139,7 +140,7 @@ const ServiceSection = ({ setSectionRef }) => (
                         <div className="service-header">
                             {IconComponent && (
                                 <div className="service-icon-wrapper">
-                                    <IconComponent size={30} />
+                                    <IconComponent size={24} />
                                 </div>
                             )}
                             <p className="service-title">{item.title}</p>
@@ -215,7 +216,18 @@ const ProjectsSection = ({ setSectionRef, onProjectClick }) => {
             tabIndex="0"
             aria-label={`Open project ${project.title}`}
         >
-            <div className="project-thumb">{project.thumbText}</div>
+            <div className="project-thumb">
+                {project.imageThumb ? (
+                    <Image 
+                        src={project.imageThumb} 
+                        alt={project.title} 
+                        fill 
+                        style={{ objectFit: 'cover' }}
+                    />
+                ) : (
+                    <span>{project.title}</span>
+                )}
+            </div>
             <h3>{project.title}</h3>
             {project.keyResults && (
                 <div className="project-results-preview">
@@ -238,7 +250,7 @@ const ProjectsSection = ({ setSectionRef, onProjectClick }) => {
                 items={projects}
                 renderItem={renderProjectCard}
                 config={{
-                    visibleCount: { desktop: 1, tablet: 1, mobile: 1 },
+                    visibleCount: 1,
                     animationSpeed: 500,
                     showDots: true,
                     showButtons: true,
@@ -251,8 +263,19 @@ const ProjectsSection = ({ setSectionRef, onProjectClick }) => {
 
 const BlogSection = ({ setSectionRef }) => {
     const renderBlogCard = (post) => (
-        <a href="#" onClick={(e)=> e.preventDefault()} className="blog-card">
-            <div className="blog-thumb">{post.thumbText}</div>
+        <a href={post.link} target="_blank" rel="noopener noreferrer" className="blog-card">
+            <div className="blog-thumb">
+                {post.imageThumb ? (
+                    <Image 
+                        src={post.imageThumb} 
+                        alt={post.title} 
+                        fill 
+                        style={{ objectFit: 'cover' }}
+                    />
+                ) : (
+                    <span>{post.title}</span>
+                )}
+            </div>
             <h3>{post.title}</h3>
             <p>{post.summary}</p>
             <span className="blog-date">{post.date}</span>
@@ -261,7 +284,7 @@ const BlogSection = ({ setSectionRef }) => {
 
     return (
         <section className="blogs" id="blogs" ref={setSectionRef}>
-            <h2 className="u-fade-in">From the Blog</h2>
+            <h2 className="u-fade-in">Insights</h2>
             <Carousel
                 items={blogPosts}
                 renderItem={renderBlogCard}
@@ -279,7 +302,7 @@ const BlogSection = ({ setSectionRef }) => {
 
 const PresenceSection = ({ setSectionRef, links }) => (
     <section className="presence" ref={setSectionRef}>
-        <h2 className="u-fade-in">Online Presence</h2>
+        <h2 className="u-fade-in">Connect With Me</h2>
         <p>Connect with me on my platforms.</p>
         <div className="presence-links">
             
@@ -305,7 +328,7 @@ const PresenceSection = ({ setSectionRef, links }) => (
 
 const LetsWorkSection = ({ setSectionRef, links }) => (
     <section className="lets-work" id="contact" ref={setSectionRef}>
-        <h2 className="u-fade-in">Let's Work Together</h2>
+        <h2 className="u-fade-in">Let's Build Something Great</h2>
         <p>I'm available for freelance projects and full-time roles. Reach out!</p>
         <div className="cta-buttons">
             <a href={`mailto:${links.email}`} className="btn" aria-label={`Email ${links.email}`}>Email Me</a>

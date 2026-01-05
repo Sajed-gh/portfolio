@@ -71,9 +71,6 @@ const useTheme = () => {
             if (savedTheme === 'dark') {
                 document.body.classList.add('dark-mode');
             }
-        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            setTheme('dark');
-            document.body.classList.add('dark-mode');
         }
     }, []);
 

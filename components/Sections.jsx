@@ -116,27 +116,12 @@ const HeroSection = ({ setSectionRef, cvLink }) => {
                     <span className="typing-cursor">|</span> 
                 </p>
                 
-                <p className="hero-copy">I specialize in transforming complex data into scalable, intelligent systems that solve real-world problems. Proven ability to bridge the gap between AI research and practical, impactful product development.</p>
+                <p className="hero-copy">I transform complex data into intelligent, scalable systems. Bridging the gap between AI research and production, I build impactful solutions that solve real-world problems.</p>
                 
-                <div className="hero-stats">
-                    <div className="stat-item">
-                        <div className="stat-number">1+</div>
-                        <div className="stat-label">Years of Experience</div>
-                    </div>
-                    <div className="stat-item">
-                        <div className="stat-number">10+</div>
-                        <div className="stat-label">Projects Completed</div>
-                    </div>
-                    <div className="stat-item">
-                        <div className="stat-number">90%</div>
-                        <div className="stat-label">Accuracy Achieved</div>
-                    </div>
-                </div>
                 
                 <div className="cta-buttons">
-                    <a href={cvLink} download className="btn" aria-label="Download my CV">Get My CV</a>
-                    <a href={`mailto:${contactInfo.email}`} className="btn" aria-label={`Email ${contactInfo.email}`}>Email Me</a>
-                    <a href={contactInfo.calendly} target="_blank" rel="noopener noreferrer" className="btn primary" aria-label="Schedule a meeting">Schedule Meeting</a>
+                    <a href={contactInfo.calendly} target="_blank" rel="noopener noreferrer" className="btn primary" aria-label="Book a Call">Book a Call</a>
+                    <a href="#projects" className="btn" aria-label="View Selected Work">View Featured Work</a>
                 </div>
             </div>
         </section>
@@ -145,7 +130,7 @@ const HeroSection = ({ setSectionRef, cvLink }) => {
 
 const ServiceSection = ({ setSectionRef }) => (
     <section className="services" id="services" ref={setSectionRef}>
-        <h2 className="u-fade-in">Services</h2>
+        <h2 className="u-fade-in">What I Build</h2>
         <div className="block-list services-grid"> 
             {serviceData.map((item) => {
                 const IconComponent = IconMap[item.icon];
@@ -169,7 +154,7 @@ const ServiceSection = ({ setSectionRef }) => (
 
 const ValuePropSection = ({ setSectionRef }) => (
     <section className="value-prop" ref={setSectionRef}>
-        <h2 className="u-fade-in">Why Partner With Me?</h2>
+        <h2 className="u-fade-in">What Sets Me Apart</h2>
         <div className="block-list value-list">
             {valuePropData.map((item) => {
                 const IconComponent = IconMap[item.icon];
@@ -193,7 +178,7 @@ const ValuePropSection = ({ setSectionRef }) => (
 
 const ProcessSection = ({ setSectionRef }) => (
     <section className="process" ref={setSectionRef}>
-        <h2 className="u-fade-in">My Approach</h2>
+        <h2 className="u-fade-in">Four Steps to Success</h2>
         <div className="block-list process-timeline">
             {processData.map((item) => {
                 const IconComponent = IconMap[item.icon];
@@ -248,7 +233,7 @@ const ProjectsSection = ({ setSectionRef, onProjectClick }) => {
 
     return (
         <section className="projects" id="projects" ref={setSectionRef}>
-            <h2 className="u-fade-in">Latest Work</h2>
+            <h2 className="u-fade-in">Featured Work</h2>
             <Carousel
                 items={projects}
                 renderItem={renderProjectCard}

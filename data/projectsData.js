@@ -4,7 +4,7 @@ export const projectsData = {
         desc: "A voice AI agent designed for task-oriented intelligence and desktop assistance. Hestia interprets natural language commands to automate complex workflows across local applications and web services (YouTube, Gmail, Weather APIs). It features a real-time voice interface and a visual status indicator that provides feedback during task execution.",
         tags: ["Python", "Automation", "LLM", "Desktop Control", "Agentic AI", "Real-time Voice Interface", "Langgraph", "External API Integration"],
         videoUrl: "/assets/videos/hestia.mp4",
-        imageThumb: "/assets/images/project_hestia.png",
+        imageThumb: "/assets/images/project_hestia_v2.png",
         keyResults: "Successfully integrated local OS automation with web-based API services, enabling a 'hands-free' workflow for creative and administrative tasks."
     },
     2: {
@@ -13,7 +13,7 @@ export const projectsData = {
         keyResults: "Showcases interactive computer vision in action, with potential applications in AR/VR, virtual meetings, and gesture-controlled interfaces.",
         tags: ["Python", "OpenCV", "MediaPipe", "Computer Vision", "Augmented Reality", "Real-Time Tracking"],
         videoUrl: "/assets/videos/avatar_mimic_demo.mp4",
-        imageThumb: "/assets/images/avatar_mimic_thumb.png"
+        imageThumb: "/assets/images/avatar_mimic_thumb_v2.png"
     },
     3: {
         title: "FocusFill: AI-Powered Object Replacement",
@@ -21,7 +21,7 @@ export const projectsData = {
         keyResults: "Demonstrates a 'smart Photoshop' workflow that eliminates manual masking, making high-end image manipulation accessible through simple point-and-click and text prompts.",
         tags: ["Python", "Stable Diffusion", "Segment Anything Model", "Computer Vision", "Generative AI", "Inpainting"],
         videoUrl: "/assets/videos/focusFill.mp4",
-        imageThumb: "/assets/images/project_focusfill.png"
+        imageThumb: "/assets/images/focusfill1.png"
     },
     4: {
         title: "Invoice Understanding: Automated Data Extraction",
@@ -37,7 +37,7 @@ export const projectsData = {
         keyResults: "Achieved robust multi-vehicle tracking and accurate character extraction for high-speed traffic, highlighting its utility for automated tolling, security monitoring, and traffic flow analysis.",
         tags: ["Python", "OpenCV", "Deep Learning", "OCR", "YOLO", "Traffic Management", "Computer Vision"],
         videoUrl: "/assets/videos/license_plate_reading.mp4",
-        imageThumb: "/assets/images/project_sentinelsight.png"
+        imageThumb: "/assets/images/project_sentinelsight_v2.png"
     }
 };
 

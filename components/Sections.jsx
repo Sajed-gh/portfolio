@@ -1,10 +1,8 @@
-// components/Sections.jsx
-
 import { useEffect, useRef, useState } from 'react'; 
 import { contactInfo } from '../data/contactInfo';
 import { projectsData } from '../data/projectsData';
 import { blogPosts } from '../data/blogPosts';
-import { HERO_ROLES } from '../data/heroData';
+import { HERO_ROLES, HERO_COPY } from '../data/heroData';
 import { serviceData } from '../data/servicesData';
 import { valuePropData } from '../data/valuePropData';
 import { processData } from '../data/processData';
@@ -51,8 +49,6 @@ const useSectionReveal = () => {
 
     return setSectionRef;
 };
-
-// HERO roles and section data are now imported from data/*.js
 
 const HeroSection = ({ setSectionRef }) => {
     
@@ -117,7 +113,7 @@ const HeroSection = ({ setSectionRef }) => {
                     <span className="typing-cursor">|</span> 
                 </p>
                 
-                <p className="hero-copy">I transform complex data into intelligent, scalable systems. Bridging the gap between AI research and production, I build impactful solutions that solve real-world problems.</p>
+                <p className="hero-copy">{HERO_COPY}</p>
                 
                 
                 <div className="cta-buttons">
@@ -222,6 +218,7 @@ const ProjectsSection = ({ setSectionRef, onProjectClick }) => {
                         src={project.imageThumb} 
                         alt={project.title} 
                         fill 
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         style={{ objectFit: 'cover' }}
                     />
                 ) : (
@@ -270,6 +267,7 @@ const BlogSection = ({ setSectionRef }) => {
                         src={post.imageThumb} 
                         alt={post.title} 
                         fill 
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         style={{ objectFit: 'cover' }}
                     />
                 ) : (
@@ -337,8 +335,6 @@ const LetsWorkSection = ({ setSectionRef, links }) => (
     </section>
 );
 
-
-// --- Main Exported Component ---
 
 export default function PortfolioSections({ onProjectClick }) {
     const setSectionRef = useSectionReveal();

@@ -11,15 +11,12 @@ export async function getStaticProps() {
 }
 
 export default function Home({ projects }) {
-    // No initial splash loader — render immediately
-
     const [modalOpen, setModalOpen] = useState(false);
     const [selectedProjectId, setSelectedProjectId] = useState(null);
 
     const [returnFocusTo, setReturnFocusTo] = useState(null);
 
     const handleProjectClick = (id, originatingElement) => {
-        // capture the originating element so we can return focus when modal closes
         setReturnFocusTo(originatingElement || document.activeElement);
         setSelectedProjectId(id);
         setModalOpen(true);
@@ -44,20 +41,20 @@ export default function Home({ projects }) {
                 <meta name="author" content="Mohamed Sajed Gharsalli" />
                 <link rel="canonical" href="https://sajed-gh.com" />
                 
-                {/* Open Graph Tags */}
+
                 <meta property="og:title" content="Mohamed Sajed Gharsalli" />
                 <meta property="og:description" content="Mohamed Sajed Gharsalli" />
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://sajed-gh.com" />
                 
-                {/* Twitter Card */}
+
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content="Mohamed Sajed Gharsalli" />
                 <meta name="twitter:description" content="View my projects and writing." />
                 
             </Head>
 
-            {/* loader removed to avoid initial splash — page renders immediately */}
+
 
             <FloatingNav />
             <PortfolioSections onProjectClick={handleProjectClick} />

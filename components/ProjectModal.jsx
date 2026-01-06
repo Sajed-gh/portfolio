@@ -10,7 +10,6 @@ export default function ProjectModal({ isOpen, project, onClose, returnFocusTo }
         if (e.key === "Escape") {
             onClose();
         }
-        // Trap Tab inside modal
         if (e.key === 'Tab') {
             const container = contentRef.current;
             if (!container) return;
@@ -22,7 +21,6 @@ export default function ProjectModal({ isOpen, project, onClose, returnFocusTo }
             }
             const idx = focusableArr.indexOf(document.activeElement);
             if (e.shiftKey) {
-                // shift + tab
                 if (idx <= 0) {
                     focusableArr[focusableArr.length - 1].focus();
                     e.preventDefault();
@@ -39,14 +37,12 @@ export default function ProjectModal({ isOpen, project, onClose, returnFocusTo }
     useEffect(() => {
         if (!isOpen || !project) return;
 
-        // Save previously focused element for restoring focus later
         prevFocusRef.current = returnFocusTo || document.activeElement;
 
         document.addEventListener('keydown', handleKeyDown);
         const originalOverflow = document.body.style.overflow;
         document.body.style.overflow = 'hidden';
 
-        // Move focus into the modal
         requestAnimationFrame(() => {
             const container = contentRef.current;
             const firstFocusable = container && container.querySelector('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
@@ -60,16 +56,14 @@ export default function ProjectModal({ isOpen, project, onClose, returnFocusTo }
         return () => {
             document.removeEventListener('keydown', handleKeyDown);
             document.body.style.overflow = originalOverflow || 'unset';
-            // Restore focus to the originating element
+            document.body.style.overflow = originalOverflow || 'unset';
             try {
                 prevFocusRef.current && prevFocusRef.current.focus && prevFocusRef.current.focus();
             } catch (err) {
-                // ignore
             }
         };
     }, [handleKeyDown, returnFocusTo, isOpen, project]);
 
-    // Short-circuit: avoid mounting or running modal side-effects when closed or no project
     if (!isOpen || !project) return null;
 
 
@@ -83,7 +77,7 @@ export default function ProjectModal({ isOpen, project, onClose, returnFocusTo }
                 </button>
                 <h2 id="modal-title">{project.title}</h2>
 
-                {/* header stats removed: role, timeframe, and metric display intentionally omitted */}
+
 
                 <div className="video-container">
                     {project.videoUrl && (project.videoUrl.includes('youtube') || project.videoUrl.includes('vimeo')) ? (

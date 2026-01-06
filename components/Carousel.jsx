@@ -69,7 +69,6 @@ export default function Carousel({
         setCurrentIndex(index);
     };
 
-    // Listen for actual CSS transition end on the track to reliably update state
     useEffect(() => {
         const trackEl = trackRef.current;
         if (!trackEl) return;
@@ -82,7 +81,6 @@ export default function Carousel({
         return () => trackEl.removeEventListener('transitionend', onTransitionEnd);
     }, [animationSpeed]);
 
-    // Touch handling
     const handleTouchStart = (e) => {
         touchStartRef.current = e.targetTouches[0].clientX;
     };
@@ -110,7 +108,6 @@ export default function Carousel({
         touchEndRef.current = null;
     };
 
-    // Keyboard navigation
     useEffect(() => {
         const handleKeyPress = (e) => {
             if (e.key === 'ArrowRight') {
@@ -137,7 +134,6 @@ export default function Carousel({
             aria-label="Carousel"
             tabIndex="0"
         >
-            {/* Header with Controls */}
             <div className="carousel-header">
                 <div className="carousel-controls">
                     {showButtons && (
